@@ -3,7 +3,7 @@ export const mockData = [
   {
     id: "1",
     title: "DreamCoder: Bootstrapping inductive program synthesis with wake-sleep learning",
-    authors: ["Ellis, K.","Wong, C.","Nye, M.","Sablé-Meyer, M.","Morales, L.","Hewitt, L.","Cary, L.","Solar-Lezama, A.","Tenenbaum, J."],
+    authors: ["Ellis, K.", "Wong, C.", "Nye, M.", "Sablé-Meyer, M.", "Morales, L.", "Hewitt, L.", "Cary, L.", "Solar-Lezama, A.", "Tenenbaum, J."],
     year: 2021,
     url: "https://dl.acm.org/doi/10.1145/3453652",
     core_contributions: "Introduces an algorithm that discovers new concepts and writes its own code, demonstrating computational creativity while assisting human programmers by learning reusable abstractions. Combines neural networks and symbolic search.",
@@ -42,7 +42,7 @@ export const mockData = [
   {
     id: "4",
     title: "Sketch2Photo: Internet Image Montage",
-    authors: ["Chen, T.", "Cheng, M.", "Ping, T.", "Sham, A.", "Hu, S."],
+    authors: ["Chen, T.", "Cheng, M.", "Tan, P.", "Shamir, A.", "Hu, S."],
     year: 2009,
     url: "https://dl.acm.org/doi/10.1145/1618452.1618476",
     core_contributions: "Automatically generates realistic image montages from simple sketches and text labels. The system performs the complex blending and searching (combinational creativity), while the human acts as the evaluative director.",
@@ -107,7 +107,7 @@ export const mockData = [
   {
     id: "9",
     title: "PaperWeaver: Enriching Topical Paper Alerts by Contextualizing Recommended Papers with User-collected Papers",
-    authors: ["Lee, Y.","Kang, H.","Latzke, M.","Kim, J.","Bragg, J.","Chang, J.","Siangliulue, P."],
+    authors: ["Lee, Y.", "Kang, H.", "Latzke, M.", "Kim, J.", "Bragg, J.", "Chang, J.", "Siangliulue, P."],
     year: 2024,
     url: "https://dl.acm.org/doi/10.1145/3613904.3642196",
     core_contributions: "An LLM-powered system that contextualizes new paper recommendations by narratively linking them to a user's existing paper collection, explaining how each new work extends or contrasts with prior reading. Scaffolds sensemaking during literature surveillance without deciding relevance for the user.",
@@ -146,7 +146,7 @@ export const mockData = [
   {
     id: "12",
     title: "Apparition: Crowdsourced User Interfaces That Come to Life as You Sketch Them",
-    authors: ["Lasecki, W.", "Kim, J.", "Rafter, N.", "Agus, E.", "Bigham, J.", "Bernstein, M."],
+    authors: ["Lasecki, W.", "Kim, J.", "Rafter, N.", "Sen, O.", "Bigham, J.", "Bernstein, M."],
     year: 2015,
     url: "https://dl.acm.org/doi/10.1145/2702123.2702506",
     core_contributions: "Uses real-time crowdsourcing as a computational engine to allow designers to sketch and verbally describe interactions, which are immediately turned into functioning prototypes. Scaffolds rapid prototyping.",
@@ -161,7 +161,7 @@ export const mockData = [
   {
     id: "13",
     title: "How AI Processing Delays Foster Creativity: Exploring Research Question Co-Creation with an LLM-based Agent (CoQuest)",
-    authors: ["Liu, Y.","Chen, S.","Cheng, H.","Yu, M.","Ran, X.","Mo, A.","Tang, Y.","Huang, Y."],
+    authors: ["Liu, Y.", "Chen, S.", "Cheng, H.", "Yu, M.", "Ran, X.", "Mo, A.", "Tang, Y.", "Huang, Y."],
     year: 2024,
     url: "https://dl.acm.org/doi/10.1145/3613904.3642698",
     core_contributions: "CoQuest is an LLM-based agent system (CHI 2024) that co-generates research questions with HCI researchers using breadth-first or depth-first strategies. A between-subjects study (N=20) found AI processing delays unexpectedly foster reflection, enabling more RQs and greater creative ownership. Hybrid: system generates candidate RQs (Type 2/Exploratory) while the interaction scaffolds the researcher's own problem-framing (Type 1).",
@@ -239,7 +239,7 @@ export const mockData = [
   {
     id: "19",
     title: "CreativeConnect: Supporting Reference Recombination for Graphic Design Ideation with Generative AI",
-    authors: ["Choi, D.","Hong, S.","Park, J.","Chung, J.","Kim, J."],
+    authors: ["Choi, D.", "Hong, S.", "Park, J.", "Chung, J.", "Kim, J."],
     year: 2024,
     url: "https://dl.acm.org/doi/10.1145/3613904.3642794",
     core_contributions: "CreativeConnect (CHI 2024) automatically extracts elements from reference images via keyword detection, recommends related keywords, and generates novel sketch recombinations from user-selected keywords. A study (N=16 design students) found users produced more design ideas with higher self-reported creativity. The system is the combinational engine; the human steers via keyword selection.",
@@ -386,7 +386,7 @@ export const mockData = [
   {
     id: "30",
     title: "Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System",
-    authors: ["Su, H.","Chen, R.","Tang, S.","Yin, Z.","Zheng, X.","Li, J.","Qi, B.","Wu, Q.","Li, H.","Ouyang, W.","Torr, P.","Zhou, B.","Dong, N."],
+    authors: ["Su, H.", "Chen, R.", "Tang, S.", "Yin, Z.", "Zheng, X.", "Li, J.", "Qi, B.", "Wu, Q.", "Li, H.", "Ouyang, W.", "Torr, P.", "Zhou, B.", "Dong, N."],
     year: 2025,
     url: "https://aclanthology.org/2025.acl-long.1368/",
     core_contributions: "VIRSCI (ACL 2025) organizes a team of virtual-scientist LLM agents that collaboratively generate, evaluate, and refine research ideas by mimicking the teamwork dynamics of real research groups (role assignment, discussion, critique, consensus). Multi-agent collaboration consistently produces ideas judged more novel and feasible than single-agent baselines. The system is the generative engine; humans evaluate final outputs.",
@@ -412,7 +412,7 @@ export const mockData = [
   {
     id: "32",
     title: "NoveltyBench: Evaluating Language Models for Humanlike Diversity",
-    authors: ["Aoyama, T.","Wilcox, E."],
+    authors: ["Zhang, Y.", "Diddee, H.", "Holm, S.", "Liu, H.", "Liu, X.", "Samuel, V.", "Wang, B.", "Ippolito, D."],
     year: 2025,
     url: "https://arxiv.org/abs/2408.01534",
     core_contributions: "COLM 2025 benchmark for evaluating whether LLMs produce humanlike diversity in open-ended creative and ideation tasks. Measures semantic dispersion, originality relative to training data, and intra-model variation across repeated prompts. Provides a principled evaluation scaffold for quantifying when LLMs homogenize vs. diversify ideation output — addressing a key gap in Type 2 CST assessment.",
@@ -425,7 +425,7 @@ export const mockData = [
   {
     id: "33",
     title: "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
-    authors: ["Vasu, R.","Basu, C.","Dalvi Mishra, B.","Sarasua, C.","Clark, P.","Bernstein, A."],
+    authors: ["Vasu, R.", "Basu, C.", "Dalvi Mishra, B.", "Sarasua, C.", "Clark, P.", "Bernstein, A."],
     year: 2025,
     url: "https://aclanthology.org/2025.emnlp-main.1/",
     core_contributions: "HypER (EMNLP 2025) generates scientific hypotheses grounded in retrieved literature passages and distills them into concise, testable claims while tracking provenance (which papers support each hypothesis). Provenance tracking makes the generative process auditable and reduces hallucination. Evaluated on biomedical and social science domains; significantly outperforms baselines on grounding and novelty metrics.",
@@ -451,7 +451,7 @@ export const mockData = [
   {
     id: "35",
     title: "Designing Support for Human-AI Idea Selection: Human Agency and AI Autonomy",
-    authors: ["Young-Ng, M.","Zhu, Q.","Liao, J.","Wang, H."],
+    authors: ["Young-Ng, M.", "Zhu, Q.", "Liao, J.", "Wang, H."],
     year: 2025,
     url: "https://generativeaiandhci.github.io/",
     core_contributions: "GenAICHI 2025 paper examining the design space for human-AI idea selection interfaces. Proposes a framework distinguishing the tradeoffs between preserving human agency (user-driven filtering) and leveraging AI autonomy (system-driven curation) in ideation pipelines. Identifies key design principles for how selection UI shapes perceived creativity and ownership. Primarily a Type 1 scaffolding paper — it scaffolds designers' own thinking about AI selection rather than generating ideas itself.",
@@ -477,7 +477,7 @@ export const mockData = [
   {
     id: "37",
     title: "Assessing and Understanding Creativity in Large Language Models",
-    authors: ["Zhao, Y.","Zhang, R.","Li, W.","Huang, D.","Guo, J.","Peng, S.","Hao, Y.","Wen, Y.","Hu, X.","Du, Z.","Guo, Q.","Li, L.","Chen, Y."],
+    authors: ["Zhao, Y.", "Zhang, R.", "Li, W.", "Huang, D.", "Guo, J.", "Peng, S.", "Hao, Y.", "Wen, Y.", "Hu, X.", "Du, Z.", "Guo, Q.", "Li, L.", "Chen, Y."],
     year: 2025,
     url: "https://link.springer.com/journal/11633",
     core_contributions: "Machine Intelligence Research 2025 survey and empirical assessment of LLM creativity across Boden's three types (Combinational, Exploratory, Transformational) using standardized creativity benchmarks. Finds LLMs excel at Combinational creativity but consistently underperform humans at Transformational creativity — reframing the paradigm rather than merely exploring within it. Provides a principled framework for situating LLMs within established computational creativity theory.",
@@ -490,7 +490,7 @@ export const mockData = [
   {
     id: "38",
     title: "Augmenting Research Ideation with Data: An Empirical Investigation in Social Science",
-    authors: ["Liu, X.","Dong, X.","Gao, X.","Feng, Y.","Pang, X."],
+    authors: ["Liu, X.", "Dong, X.", "Gao, X.", "Feng, Y.", "Pang, X."],
     year: 2025,
     url: "https://arxiv.org/abs/2501.04655",
     core_contributions: "NeurIPS 2025 AI4Science Workshop (Oral) investigating how showing researchers empirical data patterns (trend visualizations, statistical anomalies) alongside LLM-generated hypothesis prompts affects the novelty and empirical grounding of their research ideas. Hybrid: data scaffolds the researcher's attention (Type 1) while the LLM generates initial hypothesis candidates from data patterns (Type 2). Demonstrates that data-augmented ideation outperforms either human-only or LLM-only baseline.",
@@ -503,7 +503,7 @@ export const mockData = [
   {
     id: "39",
     title: "Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)",
-    authors: ["Jiang, L.","Chai, Y.","Li, M.","Liu, M.","Fok, R.","Dziri, N.","Tsvetkov, Y.","Sap, M.","Albalak, A.","Choi, Y."],
+    authors: ["Jiang, L.", "Chai, Y.", "Li, M.", "Liu, M.", "Fok, R.", "Dziri, N.", "Tsvetkov, Y.", "Sap, M.", "Albalak, A.", "Choi, Y."],
     year: 2025,
     url: "https://arxiv.org/abs/2501.07524",
     core_contributions: "NeurIPS 2025 D&B paper documenting systematic homogeneity across different LLMs when prompted with open-ended ideation and creative tasks. Even when models are prompted differently or fine-tuned on diverse data, their outputs converge on similar ideas, metaphors, and framings. Provides both a theoretical account (convergent training objectives) and empirical evidence, challenging the assumption that ensembling diverse LLMs produces diverse ideas.",
@@ -516,7 +516,7 @@ export const mockData = [
   {
     id: "40",
     title: "Synthetic Voices: Evaluating the Fidelity of LLM-Generated Personas in Representing People's Financial Wellbeing",
-    authors: ["Kaur, A.","Aird, A.","Borman, H.","Nicastro, A.","Leontjeva, A.","Pizzato, L.","Jermyn, D."],
+    authors: ["Kaur, A.", "Aird, A.", "Borman, H.", "Nicastro, A.", "Leontjeva, A.", "Pizzato, L.", "Jermyn, D."],
     year: 2025,
     url: "https://arxiv.org/abs/2502.00273",
     core_contributions: "UMAP 2025 paper evaluating how accurately LLM-generated personas represent actual human responses about financial wellbeing across demographic groups. Finds that LLM personas reproduce group-level trends but systematically underrepresent minority perspectives and extreme experiences. Directly relevant to CST research using synthetic participants in design or ideation studies — provides a calibration framework for when LLM personas can and cannot substitute for human participants.",
@@ -544,7 +544,7 @@ export const mockData = [
   {
     id: "42",
     title: "Large Language Models for Automated Open-domain Scientific Hypotheses Discovery",
-    authors: ["Yang, Z.","Du, X.","Li, J.","Zheng, J.","Poria, S.","Cambria, E."],
+    authors: ["Yang, Z.", "Du, X.", "Li, J.", "Zheng, J.", "Poria, S.", "Cambria, E."],
     year: 2024,
     url: "https://aclanthology.org/2024.findings-acl.503/",
     core_contributions: "ACL 2024 Findings paper presenting a pipeline for automatically discovering scientific hypotheses in open-domain settings. The system mines contradictions and gaps across large scientific corpora, then prompts LLMs to generate hypotheses bridging those gaps. Evaluated on biology and chemistry; human experts rated AI-generated hypotheses as novel and plausible at competitive rates. The pipeline operates fully autonomously — human role is post-hoc evaluation.",
@@ -570,7 +570,7 @@ export const mockData = [
   {
     id: "44",
     title: "Towards an Evaluation of LLM-Generated Inspiration by Developing and Validating Inspiration Scale",
-    authors: ["Thrash, T.","Elliot, A."],
+    authors: ["Shin, H.", "Choi, S.", "Cho, J. Y.", "Admoni, S.", "Lim, H.", "Kim, T.", "Hong, H.", "Lee, M.", "Kim, J."],
     year: 2024,
     url: "https://arxiv.org/abs/2404.11982",
     core_contributions: "CHI HEAL Workshop 2024 paper developing and validating a psychometric Inspiration Scale specifically for evaluating the inspirational quality of LLM-generated ideation prompts. Distinguishes inspiration from mere creativity or satisfaction, grounding the scale in the psychological literature on being-inspired-by and motivation-to-create. Provides the field's first validated instrument for measuring whether an AI-generated stimulus actually inspires a human researcher.",
@@ -583,7 +583,7 @@ export const mockData = [
   {
     id: "45",
     title: "LLM Discussion: Enhancing the Creativity of Large Language Models via Discussion Framework and Role-Play",
-    authors: ["Lu, L.","Chen, S.","Pai, T.","Yu, C.","Lee, H.","Sun, S."],
+    authors: ["Lu, L.", "Chen, S.", "Pai, T.", "Yu, C.", "Lee, H.", "Sun, S."],
     year: 2024,
     url: "https://arxiv.org/abs/2405.06373",
     core_contributions: "COLM 2024 paper proposing a multi-turn discussion framework where LLMs adopt different roles (proposer, critic, synthesizer) and engage in structured debate to enhance the diversity and novelty of generated ideas. Role-play and forced disagreement prevent premature convergence. Evaluated on creative writing and brainstorming benchmarks; outperforms both single-model and simple ensemble baselines on originality metrics.",
@@ -596,7 +596,7 @@ export const mockData = [
   {
     id: "46",
     title: "Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate",
-    authors: ["Liang, T.","He, Z.","Jiao, W.","Wang, X.","Wang, Y.","Wang, R.","Yang, Y.","Shi, S.","Tu, Z."],
+    authors: ["Liang, T.", "He, Z.", "Jiao, W.", "Wang, X.", "Wang, Y.", "Wang, R.", "Yang, Y.", "Shi, S.", "Tu, Z."],
     year: 2024,
     url: "https://arxiv.org/abs/2305.19118",
     core_contributions: "EMNLP 2024 paper demonstrating that multi-agent debate — where multiple LLM instances argue opposing positions — reliably increases divergent thinking scores on standardized measures (AUT, creative writing), compared to single-agent prompting. The adversarial dynamic forces agents away from consensus outputs, increasing semantic diversity. A foundational technique for building Type 2 ideation systems that resist homogenization.",
@@ -635,7 +635,7 @@ export const mockData = [
   {
     id: "49",
     title: "Evolving Roles and Workflows of Creative Practitioners in the Age of Generative AI",
-    authors: ["Palani, S.","Ramos, G."],
+    authors: ["Palani, S.", "Ramos, G."],
     year: 2024,
     url: "https://dl.acm.org/doi/10.1145/3635636.3656192",
     core_contributions: "Creativity & Cognition 2024 qualitative study (interviews with 20+ creative professionals) documenting how roles, workflows, and creative identity are shifting with GenAI adoption. Identifies emerging patterns: GenAI as executor (Type 2), GenAI as critic (Type 1 scaffolding), and GenAI as collaborator (hybrid). Provides empirical grounding for CST design research — understanding practitioner needs and resistances before building tools.",
@@ -661,7 +661,7 @@ export const mockData = [
   {
     id: "51",
     title: "Hypothesis Generation with Large Language Models",
-    authors: ["Zhou, Y.","Liu, H.","Srivastava, T.","Mei, H.","Tan, C."],
+    authors: ["Zhou, Y.", "Liu, H.", "Srivastava, T.", "Mei, H.", "Tan, C."],
     year: 2024,
     url: "https://arxiv.org/abs/2404.04326",
     core_contributions: "NLP4Science 2024 Workshop paper (Chenhao Tan group) studying LLM-based hypothesis generation combining literature review with data patterns. Proposes HypoGeniC, a data-driven hypothesis generation system that iteratively generates, refines, and ranks hypotheses against held-out data to improve plausibility and testability. Demonstrates on social science tasks that LLMs can generate non-obvious, data-consistent hypotheses superior to naive generation baselines.",
@@ -687,7 +687,7 @@ export const mockData = [
   {
     id: "53",
     title: "MacGyver: Are Large Language Models Creative Problem Solvers?",
-    authors: ["Tian, Y.","Ravichander, A.","Qin, L.","Le Bras, R.","Marjieh, R.","Peng, N.","Choi, Y.","Griffiths, T.","Brahman, F."],
+    authors: ["Tian, Y.", "Ravichander, A.", "Qin, L.", "Le Bras, R.", "Marjieh, R.", "Peng, N.", "Choi, Y.", "Griffiths, T.", "Brahman, F."],
     year: 2024,
     url: "https://aclanthology.org/2024.naacl-long.297/",
     core_contributions: "MacGyver (HLT-NAACL 2024) presents a benchmark of 1,600+ creative problem-solving scenarios requiring non-obvious use of everyday objects. LLMs struggle with functional fixedness differently from humans: LLMs have broad domain knowledge but propose physically infeasible solutions; humans know feasibility but lack specialized knowledge. Two prompting strategies (self-reflection + divergent-convergent thinking) significantly improve LLM performance.",
@@ -713,7 +713,7 @@ export const mockData = [
   {
     id: "55",
     title: "Human vs. Generative AI in Content Creation Competition: Symbiosis or Conflict?",
-    authors: ["Zhao, N.","Wu, Y.","Li, K."],
+    authors: ["Yao, F.", "Li, C.", "Nekipelov, D.", "Wang, H.", "Xu, H."],
     year: 2024,
     url: "https://arxiv.org/abs/2405.01562",
     core_contributions: "ICML 2024 paper analyzing competitive dynamics between human creators and generative AI on content platforms (writing, image generation). Finds symbiotic and conflictual effects depend on task type and platform structure: AI raises quality floors but may reduce human creative effort. Contributes to understanding whether Type 2 CSTs enhance or crowd out human creative contribution at scale.",
@@ -726,7 +726,7 @@ export const mockData = [
   {
     id: "56",
     title: "Thinking Out-of-the-Box: A Comparative Investigation of Human and LLMs in Creative Problem-Solving",
-    authors: ["d’Amato, M.","Coskun, E."],
+    authors: ["d’Amato, M.", "Coskun, E."],
     year: 2024,
     url: "https://arxiv.org/abs/2407.17115",
     core_contributions: "ICML 2024 Workshop on LLMs and Cognition paper comparing human and LLM performance on insight problem-solving and lateral thinking tasks. LLMs excel where breadth of analogical knowledge helps but fail at tasks requiring constraint relaxation or perceptual reframing. Maps LLM strengths/weaknesses to Boden's taxonomy, showing LLMs are strong at Combinational but weak at Transformational creativity — informing when to use LLMs as Type 2 CSTs.",
@@ -739,7 +739,7 @@ export const mockData = [
   {
     id: "57",
     title: "The Crowdless Future? Generative AI and Creative Problem-Solving",
-    authors: ["Boussioux, L.","Lane, J.","Zhang, M.","Jacimovic, V.","Lakhani, K."],
+    authors: ["Boussioux, L.", "Lane, J.", "Zhang, M.", "Jacimovic, V.", "Lakhani, K."],
     year: 2024,
     url: "https://doi.org/10.1287/mnsc.2023.4870",
     core_contributions: "INFORMS/Management Science 2024 paper running a large-scale field experiment comparing solution quality between human crowds (on IdeaConnection) and generative AI across diverse creative problem-solving challenges. Finds GenAI solutions are competitively novel but less diverse and practically feasible than top human crowd solutions. Raises structural questions about whether AI can fully replace crowdsourced ideation for Type 2 CST applications.",
@@ -754,7 +754,7 @@ export const mockData = [
   {
     id: "58",
     title: "Creating Design Resources to Scaffold the Ideation of AI Concepts",
-    authors: ["Yildirim, N.","Oh, C.","Sayar, D.","Brand, K.","Challa, S.","Turri, V.","Crosby Walton, N.","Wong, A.","Forlizzi, J.","McCann, J.","Zimmerman, J."],
+    authors: ["Yildirim, N.", "Oh, C.", "Sayar, D.", "Brand, K.", "Challa, S.", "Turri, V.", "Crosby Walton, N.", "Wong, A.", "Forlizzi, J.", "McCann, J.", "Zimmerman, J."],
     year: 2023,
     url: "https://dl.acm.org/doi/10.1145/3563657.3596075",
     core_contributions: "DIS 2023 paper developing and evaluating a set of design cards and toolkit resources for scaffolding ideation of AI-powered product concepts. The cards prompt designers to consider data sources, model behavior, failure modes, and stakeholder impact — structuring the ideation of what an AI system could or should do. Demonstrated across multiple workshops with product designers, improving both breadth and feasibility of generated AI concepts. Classic Type 1 scaffolding.",
@@ -767,7 +767,7 @@ export const mockData = [
   {
     id: "59",
     title: "A Multidisciplinary Approach of Exploring the Synergy of Human Creativity and Artificial Intelligence",
-    authors: ["Mir Djawadi, B.","Fahr, R."],
+    authors: ["Mir Djawadi, B.", "Fahr, R."],
     year: 2023,
     url: "https://generativeaiandhci.github.io/",
     core_contributions: "GenAICHI 2023 position paper proposing a multidisciplinary framework for studying human-AI creativity synergy drawing on cognitive science, creativity research, and HCI. Argues that creative AI must be understood at three levels — individual cognition, collaborative process, and sociotechnical system. Primarily Type 1: provides a conceptual scaffold for researchers designing or evaluating CSTs rather than a generative system itself.",
@@ -780,7 +780,7 @@ export const mockData = [
   {
     id: "60",
     title: "Creative Research Question Generation for Human-Computer Interaction Research",
-    authors: ["Martin‐Rodilla, P."],
+    authors: ["Liu, Y.", "Yu, M.", "Jiang, M.", "Huang, Y."],
     year: 2023,
     url: "https://arxiv.org/abs/2302.12376",
     core_contributions: "HAI-GEN Workshop at IUI 2023 paper proposing an LLM-based system for generating creative HCI research questions. The system takes a user-provided seed topic or abstract and generates diverse research questions spanning methods, application domains, and theoretical framings. Hybrid: the system generates the question candidates (Type 2/Exploratory) but the researcher's seed input defines the ideation space (Type 1/Problem Framing).",
@@ -793,7 +793,7 @@ export const mockData = [
   {
     id: "61",
     title: "Large Language Models are Zero-Shot Hypothesis Proposers",
-    authors: ["Gu, S.","Iwasawa, Y.","Kojima, T.","Matsuo, Y.","Reid, M."],
+    authors: ["Qi, B.", "Zhang, K.", "Li, H.", "Tian, K.", "Zeng, S.", "Chen, Z.", "Zhou, B."],
     year: 2023,
     url: "https://arxiv.org/abs/2311.05965",
     core_contributions: "NeurIPS 2023 Workshop on Instruction Tuning paper demonstrating that LLMs can propose plausible scientific hypotheses zero-shot (without task-specific fine-tuning) across biology, chemistry, and social science. Analyzes failure modes: LLMs generate many hypotheses that are plausible but already known, and struggle with hypotheses requiring genuine empirical novelty (Transformational). Establishes a baseline and key limitations for automated hypothesis generation systems.",
@@ -875,7 +875,7 @@ export const mockData = [
   {
     id: "67",
     title: "HARPA: A Testability-Driven, Literature-Grounded Framework for Research Ideation",
-    authors: ["Nazir, M.","Khan, D.","Mustafa, D."],
+    authors: ["Vasu, R.", "Jansen, P.", "Siangliulue, P.", "Sarasua, C.", "Bernstein, A.", "Clark, P.", "Dalvi Mishra, B."],
     year: 2025,
     url: "https://arxiv.org/abs/2510.00620",
     core_contributions: "ICLR 2026 submission (withdrawn). HARPA generates literature-grounded research proposals with testable hypotheses by: (1) identifying emerging trends via literature mining, (2) exploring hypothesis design spaces, and (3) converging on precise, testable hypotheses by pinpointing research gaps. Explicitly optimizes for testability — a constraint missing from most hypothesis generation systems. Hybrid: testability criteria scaffold human filtering (Type 1) while the system generates and self-scores proposals (Type 2).",
@@ -888,7 +888,7 @@ export const mockData = [
   {
     id: "68",
     title: "Who Owns Creativity and Who Does the Work? Trade-offs in LLM-Supported Research Ideation",
-    authors: ["Eastwood, M."],
+    authors: ["Liu, H.", "Choi, Y.", "Gautam, S.", "Jaffe, G.", "Rieh, S. Y.", "Lease, M."],
     year: 2026,
     url: "https://arxiv.org/abs/2601.12152",
     core_contributions: "Preprint critically analyzing how LLM integration in research ideation reallocates creative labor and ownership. Distinguishes between idea generation (LLM does the work) and idea selection/evaluation (human does the work), arguing that current ideation pipelines often obscure this division. Proposes a 'creative labor audit' framework for assessing human contribution in human-AI ideation systems. A Type 1 scaffolding contribution at the meta-level — scaffolds researchers' own thinking about agency in CST design.",
@@ -901,7 +901,7 @@ export const mockData = [
   {
     id: "69",
     title: "FlexMind: Supporting Deeper Creative Thinking with LLMs",
-    authors: ["Beaty, R.","Cortes, R.","Merseal, H.","Hardiman, M.","Green, A."],
+    authors: ["Yang, Y.", "Mohanty, V.", "Chen, Y. Y.", "Hong, M. K.", "Martelaro, N.", "Kittur, A."],
     year: 2025,
     url: "https://arxiv.org/abs/2509.21685",
     core_contributions: "Preprint (Niki Kittur group) proposing FlexMind, a system that supports deeper creative thinking by dynamically adjusting LLM generation constraints — expanding scope when users are stuck in local minima, then narrowing constraints to help develop promising directions. Hybrid: the constraint-management scaffold supports the human's own ideation process (Type 1), while the LLM generates content within those constraints (Type 2). Addresses the depth/breadth tradeoff in AI-augmented brainstorming.",
@@ -914,7 +914,7 @@ export const mockData = [
   {
     id: "70",
     title: "A Survey on Hypothesis Generation for Scientific Discovery in the Era of Large Language Models",
-    authors: ["Zhou, Y.","Liu, H.","Srivastava, T.","Mei, H.","Tan, C."],
+    authors: ["Alkan, A. K.", "Sourav, S.", "Jablonska, M.", "Astarita, S.", "Chakrabarty, R.", "Garuda, N.", "Khetarpal, P.", "Pioro, M.", "Tanoglidis, D.", "Iyer, K. G.", "Polimera, M. S.", "Smith, M. J.", "Ghosal, T.", "Huertas-Company, M.", "Kruk, S.", "Schawinski, K.", "Ciuca, I."],
     year: 2025,
     url: "https://arxiv.org/abs/2504.05496",
     core_contributions: "Comprehensive survey (Ioana Ciucă, Stanford) mapping the landscape of LLM-based hypothesis generation methods across scientific domains. Taxonomizes approaches by knowledge source (literature vs. data vs. expert prompting), validation strategy, and evaluation methodology. Identifies open challenges: evaluating novelty at scale, ensuring testability, and handling cross-disciplinary hypothesis generation. An Information Foraging scaffold for researchers entering the field.",
@@ -927,7 +927,7 @@ export const mockData = [
   {
     id: "71",
     title: "Sparks of Science: Hypothesis Generation Using Structured Paper Data",
-    authors: ["O'Neill, C.","Ghosal, T.","Raileanu, R.","Walmsley, M.","Bui, T.","Schawinski, K.","Ciuca, I."],
+    authors: ["O'Neill, C.", "Ghosal, T.", "Raileanu, R.", "Walmsley, M.", "Bui, T.", "Schawinski, K.", "Ciuca, I."],
     year: 2025,
     url: "https://arxiv.org/abs/2504.12976",
     core_contributions: "Preprint (Ioana Ciucă, Stanford) using structured metadata (title, abstract, section headers, citation network) from scientific papers as input to LLMs for hypothesis generation. Structured paper data consistently outperforms unstructured text as context, enabling more grounded and testable hypotheses. Introduces a provenance-aware pipeline that links generated hypotheses to specific paper elements. The system is the generative engine; structured input is a Type 1 scaffold on the data side.",
@@ -940,7 +940,7 @@ export const mockData = [
   {
     id: "72",
     title: "The Design Space of Recent AI-assisted Research Tools for Ideation, Sensemaking, and Scientific Creativity",
-    authors: ["Kim, J.","Maher, M.","Siddiqui, S."],
+    authors: ["Ye, R.", "Varona, M.", "Huang, O.", "Lee, P. Y. K.", "Liut, M.", "Nobre, C."],
     year: 2025,
     url: "https://arxiv.org/abs/2502.16291",
     core_contributions: "Preprint providing a systematic design-space analysis of AI-assisted research tools published 2019–2024, spanning hypothesis generation, literature sensemaking, and research ideation. Taxonomizes tools along dimensions: automation level, knowledge source, interaction modality, and evaluation approach. Directly maps onto the Type 1/Type 2 CST framework, identifying gaps in the design space where few tools currently exist (e.g., transformational tools that reframe research paradigms).",
@@ -953,7 +953,7 @@ export const mockData = [
   {
     id: "73",
     title: "We're Different, We're the Same: Creative Homogeneity Across LLMs",
-    authors: ["Kpetay, S."],
+    authors: ["Wenger, E.", "Kenett, Y."],
     year: 2025,
     url: "https://arxiv.org/abs/2501.19361",
     core_contributions: "Preprint empirically demonstrating that despite surface-level differences, leading LLMs (GPT-4, Claude, Gemini, LLaMA) converge on strikingly similar creative outputs on open-ended ideation tasks. Even with different temperatures, prompts, and providers, semantic similarity of generated ideas across models is high. Provides strong evidence that building Type 2 CSTs on different LLM backends does not solve the diversity problem — architectural or sampling diversity is needed.",
@@ -966,7 +966,7 @@ export const mockData = [
   {
     id: "74",
     title: "Using Large Language Models for Idea Generation in Innovation",
-    authors: ["Kanumolu, G.","Urlana, A.","Kumar, C.","Garlapati, B."],
+    authors: ["Meincke, L.", "Girotra, K.", "Nave, G.", "Terwiesch, C.", "Ulrich, K. T."],
     year: 2024,
     url: "https://ssrn.com/abstract=4526071",
     core_contributions: "SSRN 2024 management/innovation paper evaluating LLMs as tools for idea generation in organizational innovation processes. Compares LLM-generated ideas against employee-generated ideas on novelty, feasibility, and value. Finds LLMs generate more ideas faster and with competitive novelty, but human experts are better at evaluating fit with organizational context. Provides an organizational-science perspective on Type 2 CSTs for business ideation.",
@@ -992,7 +992,7 @@ export const mockData = [
   {
     id: "76",
     title: "Nova: An Iterative Planning and Search Approach to Enhance Novelty and Diversity of LLM Generated Ideas",
-    authors: ["Deng, Y.","Brucks, M.","Toubia, O."],
+    authors: ["Hu, X.", "Fu, H.", "Wang, J.", "Wang, Y.", "Li, Z.", "Xu, R.", "Lu, Y.", "Jin, Y.", "Pan, L.", "Lan, Z."],
     year: 2024,
     url: "https://arxiv.org/abs/2410.14255",
     core_contributions: "Preprint proposing Nova, which enhances LLM idea generation novelty and diversity through iterative planning (outlining the idea space to avoid) and search (sampling from underexplored regions). Nova maintains an explicit 'exclusion map' of already-generated ideas and biases subsequent generation away from them. Directly addresses the homogenization problem in Type 2 CSTs — the system generates with built-in diversity pressure rather than relying on temperature or prompting alone.",
@@ -1031,7 +1031,7 @@ export const mockData = [
   {
     id: "79",
     title: "Rapid AIdeation: Generating Ideas With the Self and in Collaboration With Large Language Models",
-    authors: ["Ghali, J.","Shima, K.","Mutoh, A.","Moriyama, K.","Inuzuka, N."],
+    authors: ["Lim, G.", "Perrault, S. T."],
     year: 2024,
     url: "https://arxiv.org/abs/2403.12928",
     core_contributions: "Preprint studying how ideation speed, quantity, and quality change when individuals ideate alone vs. in collaboration with LLMs across rapid ideation sprints. Finds that human-LLM collaboration produces more ideas faster, with comparable novelty but higher perceived fluency, compared to solo ideation. Raises the question of whether the speed gain comes from the LLM generating or from the LLM scaffolding the human's own pace. Positions as hybrid depending on individual use pattern.",
@@ -1044,7 +1044,7 @@ export const mockData = [
   {
     id: "80",
     title: "A Survey on Large Language Model Hallucination via a Creativity Perspective",
-    authors: ["Fu, Y.","Xie, R.","Sun, X.","Kang, Z.","Li, X."],
+    authors: ["Jiang, X.", "Tian, Y.", "Hua, F.", "Xu, C.", "Wang, Y.", "Guo, J."],
     year: 2024,
     url: "https://arxiv.org/abs/2402.06647",
     core_contributions: "Preprint reframing LLM hallucination as a form of Combinational creativity gone wrong — generating plausible-sounding combinations of training concepts that do not correspond to reality. Proposes a taxonomy of hallucinations mapped onto Boden's creativity types, arguing that the same mechanisms enabling creative generation also enable hallucination. Has direct implications for designing Type 2 CSTs that must balance creative generation with factual groundedness.",
@@ -1070,7 +1070,7 @@ export const mockData = [
   {
     id: "82",
     title: "The Philosopher's Stone for Science – The Catalyst Change of AI for Scientific Creativity",
-    authors: ["Ho, Y.","Chen, Q.","Pin, S.","Wang, D."],
+    authors: ["Chen, Q.", "Ho, Y. J.", "Sun, P.", "Wang, D."],
     year: 2024,
     url: "https://ssrn.com/abstract=4761763",
     core_contributions: "SSRN 2024 vision paper arguing that AI represents a phase transition in scientific creativity — not just a productivity tool but a fundamental restructuring of how scientific knowledge is generated and validated. Draws on philosophy of science and science-of-science literature to propose that AI acts as a 'catalyst' that changes the energy landscape of the hypothesis space, making previously inaccessible hypotheses reachable. A Type 1 contribution framing scientific CST design at a paradigmatic level.",
@@ -1083,7 +1083,7 @@ export const mockData = [
   {
     id: "83",
     title: "Generative Artificial Intelligence Enhances Creativity but Reduces the Diversity of Novel Content",
-    authors: ["Organisciak, P.", "Acar, S.", "Runco, M.", "Friede, K."],
+    authors: ["Doshi, A. R.", "Hauser, O."],
     year: 2023,
     url: "https://arxiv.org/abs/2312.00506",
     core_contributions: "Preprint with empirical evidence from a controlled study showing that GenAI assistance reliably raises individual-level creativity scores (fluency, originality) on divergent thinking tasks, but reduces the semantic diversity of the idea pool produced across participants. Confirms the individual-quality vs. collective-diversity tradeoff as a robust finding across task types. A foundational empirical constraint on designing Type 2 CSTs intended for population-scale deployment.",
