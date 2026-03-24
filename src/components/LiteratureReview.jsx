@@ -2,6 +2,7 @@ import React, { useMemo, useState, useRef, useEffect } from 'react';
 import rawMarkdown from '../data/literature_review.md?raw';
 import { filteredData as allData } from '../data/data_filtered';
 import HighlightLayer from './HighlightLayer';
+import ContributorsPanel from './ContributorsPanel';
 import { useAuth } from '../context/AuthContext';
 
 // ── Color palette (mirrors Dashboard) ────────────────────────────────────────
@@ -301,6 +302,9 @@ export default function LiteratureReview({ onFilterAndSwitch }) {
 
       {/* ── Main reading area ── */}
       <main style={{ flex: 1, minWidth: 0, paddingBottom: '5rem' }}>
+
+        {/* ── Contributors Panel ── */}
+        <ContributorsPanel />
 
         {/* Review title / intro */}
         <div style={{ marginBottom: '2rem', paddingBottom: '1.25rem', borderBottom: '2px solid #e2e8f0', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem' }}>

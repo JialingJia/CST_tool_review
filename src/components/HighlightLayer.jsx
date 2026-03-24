@@ -268,7 +268,12 @@ export default function HighlightLayer({ sectionRefs, children }) {
   useEffect(() => {
     const q = query(collection(db, 'highlights'), orderBy('createdAt', 'asc'));
     return onSnapshot(q, snap => {
-      setHighlights(snap.docs.map(d => ({ id: d.id, ...d.data() })));
+      // Only show comments that have NOT been incorporated (pipeline_processed !== true)
+      setHighlights(
+        snap.docs
+          .map(d => ({ id: d.id, ...d.data() }))
+          .filter(h => h.pipeline_processed !== true)
+      );
     });
   }, []);
 
@@ -363,6 +368,7 @@ export default function HighlightLayer({ sectionRefs, children }) {
         authorHandle: githubMetadata?.username || '',
         authorGithubId: githubMetadata?.githubId || '',
         authorProfileUrl: githubMetadata?.profileUrl || '',
+        pipeline_processed: false,
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
       });

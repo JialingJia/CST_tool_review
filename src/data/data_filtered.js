@@ -843,6 +843,54 @@ export const filteredData = [
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: []
+  },
+
+  // ── ENTRY 53 ─────────────────────────────────────────────────── (March 2026 pipeline) ──
+  {
+    id: "f53",
+    title: "Deep Ideation: Designing LLM Agents to Generate Novel Research Ideas on Scientific Concept Network",
+    authors: ["Zhao, R.", "Zhang, Y.", "Liu, J.", "Li, X.", "Chen, W."],
+    year: 2024,
+    venue: "arXiv [cs.AI]",
+    url: "https://doi.org/10.48550/arXiv.2511.02238",
+    core_contributions: "Deep Ideation is a framework that integrates LLM agents with a scientific concept network — built from ~100,000 AI conference papers using keyword co-occurrence and contextual relationships — to generate novel, grounded research ideas via an explore-expand-evolve workflow. A critic engine trained on real-world reviewer feedback evaluates idea novelty and feasibility at each iteration. Experiments across multiple AI domains show a 10.67% improvement in overall idea quality versus baseline methods, with generated ideas exceeding top-conference acceptance thresholds on both novelty and feasibility.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Divergent"],
+    wallas_stages: ["Preparation", "Illumination"],
+    bodens_types: ["Exploratory", "Combinational"]
+  },
+
+  // ── ENTRY 54 ─────────────────────────────────────────────────── (March 2026 pipeline) ──
+  {
+    id: "f54",
+    title: "EvoScientist: Towards Multi-Agent Evolving AI Scientists for End-to-End Scientific Discovery",
+    authors: ["Lyu, Y.", "Zhang, X.", "Yi, X.", "Zhao, Y.", "Guo, S.", "Hu, W.", "Piotrowski, J.", "Kaliski, J.", "Urbani, J.", "Meng, Z.", "Zhou, L.", "Yan, X."],
+    year: 2026,
+    venue: "arXiv [cs.CL]",
+    url: "https://doi.org/10.48550/arXiv.2603.08127",
+    core_contributions: "EvoScientist is an evolving multi-agent AI scientist framework that performs end-to-end scientific discovery through three specialized agents: a Researcher Agent (RA) for idea generation, an Engineer Agent (EA) for experiment execution, and an Evolution Manager Agent (EMA) that distills interaction histories into persistent memory to continuously improve research strategies across runs. Two memory modules — ideation memory and experimentation memory — enable the system to avoid repeating failed approaches and prioritize promising directions, addressing the static-pipeline limitation of prior autonomous AI scientist systems such as AI Scientist-v2.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Divergent", "Convergent"],
+    wallas_stages: ["Preparation", "Illumination", "Verification"],
+    bodens_types: ["Exploratory", "Combinational"]
+  },
+
+  // ── ENTRY 55 ─────────────────────────── (contributor suggestion: @JialingJia, March 2026) ──
+  {
+    id: "f55",
+    title: "Scientific Creativity",
+    authors: ["Getzels, J.W.", "Csikszentmihalyi, M."],
+    year: 1967,
+    venue: "Science Journal",
+    url: "https://psycnet.apa.org/record/1967-16699-001",
+    core_contributions: "Foundational empirical account arguing that scientific creativity resides primarily in problem-finding — the disposition to identify and formulate problems worth pursuing — rather than in problem-solving ability. Distinguishes creative scientists from merely capable ones by their sensitivity to gaps, tensions, and anomalies that others overlook, shifting the locus of creativity upstream of hypothesis testing.",
+    tool_types: ["Survey / Theory"],
+    research_stages: [],
+    creative_thinking_types: ["Divergent"],
+    wallas_stages: ["Incubation"],
+    bodens_types: []
   }
 
 ];

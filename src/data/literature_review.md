@@ -20,7 +20,18 @@ with foundational questions about the appropriate division of labor between rese
 ## Theoretical Grounding: Defining Scientific Creativity
 
 Before tools can support scientific creativity, the field needs to know what it is supporting.
-Several strands of theoretical work have tackled this question from complementary angles. At the
+At its most foundational, scientific creativity refers to the capacity to generate ideas, hypotheses,
+or frameworks that are both novel and valuable within a scientific domain. Getzels and
+Csikszentmihalyi [1967] offered an influential early account that locates this capacity not primarily
+in problem-solving ability — arriving at a correct answer to a well-formed question — but in
+*problem finding*: the disposition to identify problems worth pursuing in the first place. On this
+view, what distinguishes creative scientists from merely capable ones is the ability to sense gaps,
+tensions, and anomalies that others overlook, and to formulate them as tractable scientific
+questions. This problem-finding conception shifted the locus of scientific creativity upstream, from
+the formal machinery of hypothesis testing to the largely tacit process of deciding what is worth
+investigating at all — a shift with direct implications for how any supporting tool should be
+designed.
+Several strands of theoretical work have since tackled this question from complementary angles. At the
 most foundational level, the 4Ps framework — product, process, person, press — organizes the
 different objects of inquiry in creativity research, and recent work has applied this lens
 specifically to HCI, showing that researchers often talk past each other because they are
@@ -205,9 +216,20 @@ that domain experts rate significantly higher in novelty than those produced by 
 methods. Validated against real-world biomedical discovery tasks — including drug repurposing for
 acute myeloid leukemia and hypothesis generation for antimicrobial resistance — it represents a
 qualitative step toward fully autonomous research ideation while positioning the scientist as the
-supervisor who sets the goal and adjudicates outcomes. Chain-of-Ideas [Li et al. 2025] further
+supervisor who sets the goal and adjudicates outcomes. EvoScientist [Lyu et al. 2026] pushes this trajectory further by introducing persistent cross-run memory as a first-class system component. Where prior multi-agent systems self-improve only within a single session, EvoScientist's Evolution Manager Agent continuously distills interaction histories — tracking which research directions proved fruitful and which failed — into ideation and experimentation memory modules that carry over across independent runs, directly addressing the recurrence problem in which static autonomous pipelines repeatedly explore the same unproductive directions. Chain-of-Ideas [Li et al. 2025] further
 grounds iterative generation in literature trajectories, constructing progressive chains of ideas
 grounded in how a field has evolved rather than treating the literature as a flat knowledge base.
+Complementing this trajectory-based approach, Deep Ideation [Zhao et al. 2024] takes a third
+strategy for grounding iterative generation in domain structure: rather than organizing
+literature chronologically or thematically, it constructs a scientific concept network from
+approximately 100,000 AI conference papers, encoding keyword co-occurrence and paper-level
+contextual relationships as a navigable graph. LLM agents traverse this network through an
+explore-expand-evolve workflow, and a critic engine trained on real reviewer feedback provides
+continuous novelty and feasibility signals at each iteration. Evaluated across multiple AI
+research domains, the framework achieves a 10.67% improvement in idea quality over prior
+baselines — suggesting that encoding domain-specific relational structure as an explicit
+knowledge graph, rather than leaving it implicit in model weights or unstructured retrieval
+corpora, yields measurable gains in the caliber of autonomously generated research ideas.
 
 ---
 
@@ -318,3 +340,23 @@ empirical study (n=54) examining creativity, effort, and ownership trade-offs ac
 control levels in a three-role agentic ideation probe. Key finding: creativity support is
 non-linear with control, and human effort shifts from generating to verifying ideas as AI takes
 more control. Integrated into the *Empirical Foundations* section and *Open Tensions*.
+
+[Zhao et al., arXiv cs.AI 2024] — A Type 2 Exploratory+Combinational system (Deep Ideation)
+that builds a scientific concept network from ~100,000 AI conference papers and deploys LLM
+agents via an explore-expand-evolve workflow to generate novel, grounded research ideas. A
+critic engine trained on real reviewer feedback provides iterative quality signals. Achieves a
+10.67% improvement in idea quality over prior baselines. Integrated into the *Computational
+Ideation at Scale* section's multi-agent paragraph.
+
+[Getzels and Csikszentmihalyi, Science Journal 1967] — Foundational theoretical paper
+arguing that scientific creativity resides primarily in *problem-finding* rather than
+problem-solving: the capacity to sense gaps and anomalies others overlook and to formulate
+them as tractable scientific questions. Contributed via researcher annotation (@JialingJia).
+Integrated into the opening of the *Theoretical Grounding* section to ground the discussion
+of what scientific creativity is before reviewing modern tool approaches.
+
+[Lyu et al., arXiv cs.CL 2026] — EvoScientist, a multi-agent Type 2 system that introduces
+persistent cross-run memory (ideation and experimentation memory modules) managed by an
+Evolution Manager Agent, enabling the autonomous pipeline to avoid repeating failed directions
+across independent runs. Integrated into the *Computational Ideation at Scale* section's
+multi-agent subsection, positioned between AI co-scientist and Chain-of-Ideas.

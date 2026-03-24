@@ -15,9 +15,41 @@ Requires: firebase-admin   (pip install firebase-admin)
           CST_tool_review/firebase-service-account.json  (service account key)
 """
 
-import json, os, sys, re
+import json, os, sys, re, socket
 from datetime import datetime, timezone
 from pathlib import Path
+
+# ── Fix gRPC proxy: strip only the socks5h vars (unsupported by gRPC),
+#    keep http/https proxy so gRPC can reach Firestore via the HTTP tunnel proxy ──
+for _var in ("grpc_proxy", "GRPC_PROXY",   # socks5h – gRPC-specific, must remove
+             "all_proxy",  "ALL_PROXY",     # socks5h – catch-all fallback, must remove
+             "ftp_proxy",  "FTP_PROXY"):    # socks5h – not needed for Firebase
+    os.environ.pop(_var, None)
+
+# ── Pre-flight: check if Firestore is reachable ──────────────────────────────
+def _firestore_reachable(host="firestore.googleapis.com", port=443, timeout=5) -> bool:
+    """
+    Returns True if Firestore is reachable.
+    - If a local HTTP proxy (127.0.0.1:3128) is running, test through it.
+    - If no proxy is running, assume direct internet access and return True.
+    """
+    proxy_host = "127.0.0.1"
+    proxy_port = 3128
+    try:
+        s = socket.create_connection((proxy_host, proxy_port), timeout=2)
+        connect_req = (
+            f"CONNECT {host}:{port} HTTP/1.1\r\n"
+            f"Host: {host}:{port}\r\n\r\n"
+        ).encode()
+        s.sendall(connect_req)
+        resp = s.recv(256).decode(errors="ignore")
+        s.close()
+        return "200" in resp
+    except ConnectionRefusedError:
+        # No proxy running locally — assume direct connection is fine
+        return True
+    except Exception:
+        return False
 
 WORKSPACE   = Path(__file__).parent
 KEY_FILE    = WORKSPACE / "firebase-service-account.json"
@@ -33,19 +65,32 @@ PAPER_SIGNALS = [
     r"https?://dl\.acm\.org/doi/\S+",
     r"https?://aclanthology\.org/\S+",
     r"https?://openreview\.net/\S+",
+    r"https?://psycnet\.apa\.org/\S+",
+    r"https?://www\.semanticscholar\.org/\S+",
+    r"https?://link\.springer\.com/\S+",
+    r"https?://onlinelibrary\.wiley\.com/\S+",
+    r"https?://ieeexplore\.ieee\.org/\S+",
+    r"https?://pubmed\.ncbi\.nlm\.nih\.gov/\S+",
+    r"https?://www\.nature\.com/\S+",
+    r"https?://www\.pnas\.org/\S+",
+    r"https?://www\.jstor\.org/\S+",
     r"\b\d{4}\.\d{4,5}\b",                    # bare arXiv ID like 2601.12152
 ]
 
 ACTION_PHRASES = [
     "consider this", "add this paper", "you should include",
     "please add", "missing paper", "relevant paper",
-    "see also", "check out", "don't forget",
+    "see also", "check out", "don't forget", "worth looking",
+    "worth reading", "you might want", "also relevant",
 ]
 
 def is_actionable(text: str) -> bool:
     low = text.lower()
-    return any(p in low for p in ACTION_PHRASES) or \
-           any(re.search(pat, text) for pat in PAPER_SIGNALS)
+    # Any academic URL in the comment is automatically actionable
+    if any(re.search(pat, text) for pat in PAPER_SIGNALS):
+        return True
+    # Action phrases without a URL are also actionable
+    return any(p in low for p in ACTION_PHRASES)
 
 def extract_urls(text: str) -> list:
     urls = re.findall(r"https?://\S+", text)
@@ -81,6 +126,13 @@ def ts_to_str(ts) -> str:
         return ""
 
 def main():
+    # ── Pre-flight connectivity check ─────────────────────────────────────
+    if not _firestore_reachable():
+        print("[collect_comments] ⚠️  firestore.googleapis.com is not reachable "
+              "(blocked by network proxy). Skipping comment collection.")
+        print("  → pending_instructions.json and contributor_credits.json left unchanged.")
+        sys.exit(0)
+
     # ── Check for key file ────────────────────────────────────────────────
     if not KEY_FILE.exists():
         print(f"[collect_comments] ⚠️  Service account key not found at {KEY_FILE}")
@@ -93,7 +145,7 @@ def main():
         from firebase_admin import credentials, firestore as fs
     except ImportError:
         print("[collect_comments] Installing firebase-admin…")
-        os.system(f"{sys.executable} -m pip install firebase-admin --break-system-packages -q")
+        os.system(f"{sys.executable} -m pip install firebase-admin -q")
         import firebase_admin
         from firebase_admin import credentials, firestore as fs
 
@@ -102,11 +154,12 @@ def main():
         firebase_admin.initialize_app(cred)
 
     db = fs.client()
+    from google.cloud.firestore_v1.base_query import FieldFilter
 
     # ── Fetch unprocessed comments ────────────────────────────────────────
     try:
         raw = list(db.collection(COLLECTION)
-                     .where("pipeline_processed", "==", False)
+                     .where(filter=FieldFilter("pipeline_processed", "==", False))
                      .stream())
     except Exception:
         raw = []
