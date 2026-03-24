@@ -1,9 +1,11 @@
 // ── CST-CATEGORIZED: Research Ideation Tools ────────────────────────────────
 // Source: research_ideation_tools.json (46 papers)
-// Taxonomy: Type 1       = Scaffolding Human Cognitive Processes
-//           Type 2       = Computational Creativity with Human as Evaluator
-//           Survey/Theory = Survey, benchmark, empirical study, or conceptual
-//                          paper (no deployed tool artifact)
+// Taxonomy: Type 1          = Scaffolding Human Cognitive Processes
+//           Type 2          = Computational Creativity with Human as Evaluator
+//           Survey / Theory = Survey, benchmark, taxonomy, or conceptual/theoretical paper
+//           Empirical Study = User study, experiment, or field study (no tool artifact)
+// Research stages (Type 1 & hybrid tools): Information Foraging | Problem Framing
+//                                          Analysis & Sensemaking | Research Planning
 // Added field: venue (publication venue)
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -19,7 +21,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.1145/3498366.3505783",
     core_contributions: "Empirical investigation of how humans engage in creative thinking while searching for new ideas in academic contexts, identifying cognitive strategies and information-seeking patterns that support ideation.",
     tool_types: ["Empirical Study"],
-    research_stages: ["Information Foraging", "Problem Framing", "Ideation"],
+    research_stages: ["Information Foraging", "Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Incubation"],
     bodens_types: []
@@ -51,7 +53,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.1145/3726302.3730151",
     core_contributions: "DeepReport is an AI system that autonomously generates structured research ideas by mining scientific literature, producing ideas the human then evaluates and refines rather than generating themselves.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
     bodens_types: ["Exploratory"]
@@ -67,7 +69,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2410.14255",
     core_contributions: "Nova is a planning-and-search methodology that drives LLMs to iteratively generate novel and diverse research ideas by incorporating external knowledge retrieval, with humans evaluating the generated output.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory"]
@@ -82,7 +84,7 @@ export const filteredData = [
     venue: "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
     url: "http://dx.doi.org/10.1145/3711896.3737419",
     core_contributions: "IdeaBench provides a standardized evaluation framework for benchmarking LLMs on research idea generation quality, enabling systematic comparison of Type 2 computational creativity systems.",
-    tool_types: ["Benchmark"],
+    tool_types: ["Survey / Theory"],
     research_stages: [],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination", "Verification"],
@@ -99,7 +101,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2504.12976",
     core_contributions: "A system that uses structured metadata extracted from scientific papers (methods, datasets, results) as grounding to prompt LLMs to generate novel, feasible scientific hypotheses at scale.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
     bodens_types: ["Combinational"]
@@ -115,7 +117,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2504.05496",
     core_contributions: "A comprehensive survey of LLM-based hypothesis generation systems for scientific discovery, taxonomizing approaches by mechanism, evaluating their creativity, and identifying open research directions.",
     tool_types: ["Survey / Theory"],
-    research_stages: ["Ideation"],
+    research_stages: [],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination", "Verification"],
     bodens_types: []
@@ -131,7 +133,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2510.00620",
     core_contributions: "HARPA is a framework that generates scientifically grounded, testable hypotheses by incorporating testability criteria and adaptive feedback from prior experimental outcomes into the LLM ideation pipeline.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Illumination", "Verification"],
     bodens_types: ["Exploratory"]
@@ -147,7 +149,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2311.05965",
     core_contributions: "Demonstrates that LLMs can propose plausible scientific hypotheses zero-shot by leveraging their broad interdisciplinary knowledge, breaking down information barriers across scientific fields.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
     bodens_types: ["Combinational"]
@@ -163,7 +165,7 @@ export const filteredData = [
     url: "https://ceur-ws.org/Vol-3359/paper7.pdf",
     core_contributions: "Applies natural language generation (NLG) methods to automatically produce creative HCI research questions from existing papers, positioning the system as an idea-generating partner for interdisciplinary ideation.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Combinational"]
@@ -179,7 +181,7 @@ export const filteredData = [
     url: "https://openreview.net/forum?id=G7UtIGQmjm",
     core_contributions: "Proposes a hypothesis search algorithm in which LMs systematically enumerate and test candidate hypotheses to solve inductive reasoning tasks, treating hypothesis space exploration as a search problem.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Convergent"],
     wallas_stages: ["Illumination", "Verification"],
     bodens_types: ["Exploratory"]
@@ -195,7 +197,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/2024.nlp4science-1.10",
     core_contributions: "Investigates how LLMs can generate scientific hypotheses from background literature, analyzing the quality, novelty, and plausibility of machine-generated hypotheses versus human-authored ones.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
     bodens_types: ["Combinational"]
@@ -211,7 +213,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/2024.findings-acl.503",
     core_contributions: "Introduces minimum Bayes risk decoding as a method to generate text outputs that are simultaneously diverse and high-quality, enabling LLM-based ideation systems to produce varied rather than repetitive suggestions.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
     bodens_types: ["Exploratory"]
@@ -227,7 +229,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/2024.acl-long.18",
     core_contributions: "SciMON is a system that generates novel scientific ideas by retrieving inspiration from cross-domain literature and optimizing explicitly for novelty, functioning as an idea-generation machine the researcher then evaluates.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Incubation", "Illumination"],
     bodens_types: ["Combinational"]
@@ -243,7 +245,7 @@ export const filteredData = [
     url: "https://openreview.net/forum?id=eblvaoaXlg",
     core_contributions: "Empirically investigates whether providing LLMs with relevant data (beyond just literature) during ideation improves research idea quality for social science, finding that data augmentation boosts feasibility.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Combinational"]
@@ -259,7 +261,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/2025.findings-emnlp.477",
     core_contributions: "Proposes a Chain-of-Ideas framework in which LLM agents construct a progressive chain of research ideas grounded in literature trajectories, systematically exploring the frontier of a research field.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Analysis & Sensemaking"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory"]
@@ -275,7 +277,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/2025.emnlp-main.1",
     core_contributions: "Presents a method for automatically discovering systematic errors and failure modes in conversational AI systems, using computational exploration to surface blind spots that human testers overlook.",
     tool_types: ["Type 2"],
-    research_stages: ["Analysis & Sensemaking"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Convergent"],
     wallas_stages: ["Verification"],
     bodens_types: ["Exploratory"]
@@ -291,7 +293,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/2025.acl-long.12",
     core_contributions: "Introduces a synergistic framework that combines scientific literature and empirical datasets to generate high-quality hypotheses, with the system doing the integrative creative work of blending both knowledge sources.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Combinational"]
@@ -307,7 +309,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/P19-1191",
     core_contributions: "PaperRobot incrementally generates new scientific paper sections (background, future work, titles, abstracts) by reading existing papers and autonomously constructing novel scientific ideas and paper drafts.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Analysis & Sensemaking"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
     bodens_types: ["Combinational"]
@@ -339,7 +341,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.1145/3527927.3532813",
     core_contributions: "Empirical study documenting how academic researchers capture, store, organize, and develop research ideas over time, surfacing patterns in idea management practices that could inform future tool design.",
     tool_types: ["Empirical Study"],
-    research_stages: ["Ideation"],
+    research_stages: [],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Incubation"],
     bodens_types: []
@@ -355,7 +357,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.1145/3706598.3713161",
     core_contributions: "Taxonomy and survey connecting the landscape of AI-powered writing support tools to specific writer needs and stages, providing a framework for understanding where tools scaffold versus replace human authorship.",
     tool_types: ["Survey / Theory"],
-    research_stages: ["Ideation"],
+    research_stages: [],
     creative_thinking_types: ["Convergent"],
     wallas_stages: ["Preparation", "Verification"],
     bodens_types: []
@@ -387,7 +389,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.1145/3727979",
     core_contributions: "Cross-domain qualitative study (~200 surveys, ~60 interviews) of how creative practitioners in design, research, music, and writing capture and manage ideas, revealing tool-use patterns and unmet needs.",
     tool_types: ["Empirical Study"],
-    research_stages: ["Ideation"],
+    research_stages: [],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Incubation"],
     bodens_types: []
@@ -435,7 +437,7 @@ export const filteredData = [
     url: "https://aclanthology.org/2025.acl-demo.57/",
     core_contributions: "IRIS is an interactive LLM-based system that generates novel, transparent research hypotheses by integrating related work retrieval, allowing researchers to inspect the evidence trail behind each generated idea.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination", "Verification"],
     bodens_types: ["Exploratory"]
@@ -451,7 +453,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2509.20553",
     core_contributions: "Perspectra is a multi-agent system where users select domain-expert LLM personas that deliberate via a forum-style interface; the agents generate ideas and critiques while the human steers the deliberation and evaluates outputs.",
     tool_types: ["Type 1", "Type 2"],
-    research_stages: ["Problem Framing", "Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Combinational"]
@@ -467,7 +469,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/2025.acl-long.1368",
     core_contributions: "A multi-agent LLM system in which specialized agents (e.g., scientist, critic, reviewer) collaborate to generate higher-quality scientific ideas than any single LLM agent, with diverse agent perspectives driving Combinational creativity.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
     bodens_types: ["Combinational"]
@@ -483,7 +485,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.1145/3313831.3376746",
     core_contributions: "Spinneret is a visual ideation tool that computationally surfaces non-obvious concept associations to seed creative thinking; the system generates surprising conceptual links that humans then use to develop their own ideas.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Incubation", "Illumination"],
     bodens_types: ["Combinational"]
@@ -499,7 +501,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/2025.naacl-long.342",
     core_contributions: "ResearchAgent is an LLM agent that iteratively generates, refines, and critiques research ideas by continuously mining scientific literature, autonomously driving the ideation loop while humans evaluate the final outputs.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory"]
@@ -515,7 +517,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.1145/3715336.3735789",
     core_contributions: "PersonaFlow scaffolds research ideation by presenting LLM-simulated expert perspectives as structured prompts, enabling researchers to consider viewpoints from diverse disciplines while retaining authorship of their own ideas.",
     tool_types: ["Type 1", "Type 2"],
-    research_stages: ["Problem Framing", "Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Combinational"]
@@ -531,7 +533,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2403.12928",
     core_contributions: "Workshop study comparing solo human ideation, LLM-generated ideation, and human-LLM collaborative ideation, finding that collaborative modes leverage both human agency and LLM generativity for richer outcomes.",
     tool_types: ["Empirical Study"],
-    research_stages: ["Ideation"],
+    research_stages: [],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: []
@@ -547,7 +549,7 @@ export const filteredData = [
     url: "https://dl.acm.org/doi/10.1145/3706598.3714198",
     core_contributions: "Randomized controlled experiments measuring how LLM assistance affects human divergent and convergent thinking, finding nuanced effects on creative output quality, originality, and cognitive engagement.",
     tool_types: ["Empirical Study"],
-    research_stages: ["Ideation"],
+    research_stages: [],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: []
@@ -563,7 +565,7 @@ export const filteredData = [
     url: "https://dl.acm.org/doi/10.1145/3711000",
     core_contributions: "Qualitative study examining how HCI researchers perceive and navigate the ethical dimensions of using LLMs in their research practices, revealing tensions between efficiency gains and concerns about intellectual integrity.",
     tool_types: ["Empirical Study"],
-    research_stages: ["Analysis & Sensemaking"],
+    research_stages: [],
     creative_thinking_types: ["Convergent"],
     wallas_stages: ["Preparation", "Verification"],
     bodens_types: []
@@ -579,7 +581,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2502.16291",
     core_contributions: "Survey and design space analysis of recent AI-assisted research tools across ideation, sensemaking, and creativity dimensions, providing a taxonomy of tool capabilities, interaction modes, and automation levels.",
     tool_types: ["Survey / Theory"],
-    research_stages: ["Ideation", "Analysis & Sensemaking"],
+    research_stages: [],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: []
@@ -595,7 +597,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2409.14634",
     core_contributions: "Scideator is a human-LLM compound system that extracts facets (purposes, mechanisms, evaluations) from user-provided seed papers and recombines them to generate novel scientific ideas, with built-in novelty evaluation against the literature.",
     tool_types: ["Type 1", "Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: ["Combinational"]
@@ -627,7 +629,7 @@ export const filteredData = [
     url: "https://dl.acm.org/doi/pdf/10.1145/3530013",
     core_contributions: "An analogical search engine that retrieves structurally similar solutions from distant scientific domains, with the system generating the cross-domain analogical connections and the researcher adapting them to their problem.",
     tool_types: ["Type 2"],
-    research_stages: ["Ideation"],
+    research_stages: ["Information Foraging", "Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Incubation", "Illumination"],
     bodens_types: ["Combinational"]
@@ -643,7 +645,7 @@ export const filteredData = [
     url: "http://arxiv.org/abs/2412.10999",
     core_contributions: "Cocoa is a human-agent collaboration framework for long-running research tasks where planning and execution are interleaved, allowing humans to steer, intervene, and co-execute alongside AI agents rather than simply reviewing autonomous outputs.",
     tool_types: ["Type 1", "Type 2"],
-    research_stages: ["Experiment Design", "Analysis & Sensemaking"],
+    research_stages: ["Research Planning", "Analysis & Sensemaking"],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: ["Exploratory"]
@@ -659,7 +661,7 @@ export const filteredData = [
     url: "https://dl.acm.org/doi/pdf/10.1145/3637361",
     core_contributions: "Qualitative study of how writers collaborate with LLMs during prewriting (divergent exploration before drafting), finding that LLM assistance acts as a cognitive partner that both scaffolds and displaces aspects of human ideation.",
     tool_types: ["Empirical Study"],
-    research_stages: ["Ideation"],
+    research_stages: [],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Incubation"],
     bodens_types: []
@@ -675,7 +677,7 @@ export const filteredData = [
     url: "https://dl.acm.org/doi/pdf/10.1145/3613904.3642731",
     core_contributions: "Critical analysis demonstrating that LLM-generated creative work, while superficially fluent, lacks the intentionality, risk-taking, and contextual meaning that characterize genuine human creativity.",
     tool_types: ["Empirical Study"],
-    research_stages: ["Ideation", "Analysis & Sensemaking"],
+    research_stages: [],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
     bodens_types: []
@@ -739,7 +741,7 @@ export const filteredData = [
     url: "https://doi.org/10.1145/3576840.3578294",
     core_contributions: "SearchIdea is a web-based tool that scaffolds creative thinking during academic search by enabling users to actively reorganize, annotate, and synthesize search results — keeping the researcher as the primary idea generator.",
     tool_types: ["Type 1"],
-    research_stages: ["Information Foraging", "Ideation"],
+    research_stages: ["Information Foraging", "Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Incubation"],
     bodens_types: []

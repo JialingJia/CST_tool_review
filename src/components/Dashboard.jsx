@@ -100,14 +100,7 @@ const TagCellRenderer = (props) => {
 };
 
 // ── Main Dashboard ──────────────────────────────────────────────────────────
-const Dashboard = () => {
-  const [activeFilters, setActiveFilters] = useState({
-    tool_types: [],
-    research_stages: [],
-    creative_thinking_types: [],
-    wallas_stages: [],
-    bodens_types: [],
-  });
+const Dashboard = ({ activeFilters, setActiveFilters }) => {
 
   const [filterOpen, setFilterOpen] = useState(true);
 
@@ -333,9 +326,8 @@ const Dashboard = () => {
             {[
               { label: 'Type 1', desc: 'Scaffolding Human Cognitive Processes', bg: '#ecfdf5', text: '#065f46', border: '#6ee7b7' },
               { label: 'Type 2', desc: 'Computational Creativity with Human as Evaluator', bg: '#eff6ff', text: '#1e40af', border: '#93c5fd' },
-              { label: 'Survey / Theory', desc: 'Conceptual paper — no deployed tool artifact', bg: '#faf5ff', text: '#6b21a8', border: '#d8b4fe' },
-              { label: 'Empirical Study', desc: 'Empirical study — no deployed tool artifact', bg: '#fff7ed', text: '#9a3412', border: '#fdba74' },
-              { label: 'Benchmark', desc: 'Benchmark or evaluation framework', bg: '#fdf2f8', text: '#86198f', border: '#f0abfc' },
+              { label: 'Survey / Theory', desc: 'Survey, taxonomy, or conceptual/theoretical paper (no tool artifact)', bg: '#faf5ff', text: '#6b21a8', border: '#d8b4fe' },
+              { label: 'Empirical Study', desc: 'User study, experiment, or field study (no tool artifact)', bg: '#fff7ed', text: '#9a3412', border: '#fdba74' },
             ].map(({ label, desc, bg, text, border }) => (
               <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '0.78rem' }}>
                 <span style={{ background: bg, color: text, border: `1px solid ${border}`, padding: '1px 8px', borderRadius: '10px', fontWeight: 600, whiteSpace: 'nowrap' }}>{label}</span>
