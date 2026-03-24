@@ -43,9 +43,58 @@ function findPaper(citationInner) {
   return CITE_MAP[`${lastName}_${yr}`] ?? null;
 }
 
-// ── Markdown parser ───────────────────────────────────────────────────────────
-const CITE_RE = /\[([A-Z][A-Za-zé\-]+(?: and [A-Z][A-Za-zé\-]+)?(?:\s+et al\.)?\s+\d{4}[a-d]?)\]/g;
+// ── Citation regexes (two formats) ──────────────────────────────────────────
+// Format A: [Author et al. Year]  or  [A et al. 2025; B et al. 2025]
+//   captures everything between brackets that contains a 4-digit year
+const CITE_RE_FULL = /\[([^\]]*\d{4}[a-d]?[^\]]*)\]/g;
+// Format B: Author et al. [Year]  — only year in brackets
+const CITE_RE_SPLIT = /([A-Z][A-Za-zé'\-]+(?: and [A-Z][A-Za-zé'\-]+)?(?:\s+et al\.)?) \[(\d{4}[a-d]?)\]/g;
+// Regex to validate a single citation segment looks like a real citation
+const SINGLE_CITE_RE = /^[A-Z][A-Za-zé'\-]+(?: and [A-Z][A-Za-zé'\-]+)?(?:\s+et al\.)?\s+\d{4}[a-d]?$/;
 
+// Collect all citation matches from both formats, sorted by position
+function collectMatches(text) {
+  const matches = [];
+
+  // Format A — may be compound (semicolon-separated)
+  const reA = new RegExp(CITE_RE_FULL.source, 'g');
+  let m;
+  while ((m = reA.exec(text)) !== null) {
+    const segments = m[1].split(';').map(s => s.trim()).filter(Boolean);
+    // Only treat as citation if every segment looks like a valid citation
+    if (segments.every(s => SINGLE_CITE_RE.test(s))) {
+      matches.push({ start: m.index, end: m.index + m[0].length, inners: segments });
+    }
+  }
+
+  // Format B — single citation, year in brackets
+  const reB = new RegExp(CITE_RE_SPLIT.source, 'g');
+  while ((m = reB.exec(text)) !== null) {
+    matches.push({ start: m.index, end: m.index + m[0].length, inners: [`${m[1].trim()} ${m[2]}`] });
+  }
+
+  // Sort by start position; deduplicate overlaps
+  matches.sort((a, b) => a.start - b.start);
+  const deduped = [];
+  let prevEnd = -1;
+  for (const match of matches) {
+    if (match.start >= prevEnd) { deduped.push(match); prevEnd = match.end; }
+  }
+  return deduped;
+}
+
+function extractCitedPapers(body) {
+  const seen = new Map();
+  collectMatches(body).forEach(({ inners }) => {
+    inners.forEach(inner => {
+      const p = findPaper(inner);
+      if (p && !seen.has(p.id)) seen.set(p.id, p);
+    });
+  });
+  return [...seen.values()];
+}
+
+// ── Markdown parser ───────────────────────────────────────────────────────────
 function parseSections(raw) {
   return raw
     .split('\n---\n')
@@ -62,16 +111,7 @@ function parseSections(raw) {
     });
 }
 
-function extractCitedPapers(body) {
-  const seen = new Map();
-  const re = new RegExp(CITE_RE.source, 'g');
-  let m;
-  while ((m = re.exec(body)) !== null) {
-    const p = findPaper(m[1]);
-    if (p && !seen.has(p.id)) seen.set(p.id, p);
-  }
-  return [...seen.values()];
-}
+
 
 // Section heading → tool_types filter preset
 function sectionFilterPreset(heading) {
@@ -149,12 +189,10 @@ function CitationChip({ inner }) {
 function renderParts(text) {
   const parts = [];
   let last = 0;
-  const re = new RegExp(CITE_RE.source, 'g');
-  let m;
-  while ((m = re.exec(text)) !== null) {
-    if (m.index > last) parts.push({ type: 'text', content: text.slice(last, m.index) });
-    parts.push({ type: 'cite', inner: m[1] });
-    last = m.index + m[0].length;
+  for (const { start, end, inners } of collectMatches(text)) {
+    if (start > last) parts.push({ type: 'text', content: text.slice(last, start) });
+    parts.push({ type: 'cite-group', inners });
+    last = end;
   }
   if (last < text.length) parts.push({ type: 'text', content: text.slice(last) });
   return parts;
@@ -171,7 +209,12 @@ function Prose({ body }) {
             {parts.map((part, i) =>
               part.type === 'text'
                 ? <span key={i}>{part.content}</span>
-                : <CitationChip key={i} inner={part.inner} />
+                : (
+                  // cite-group: one or more chips side-by-side
+                  <span key={i} style={{ display: 'inline-flex', gap: '3px', alignItems: 'baseline' }}>
+                    {part.inners.map((inner, j) => <CitationChip key={j} inner={inner} />)}
+                  </span>
+                )
             )}
           </p>
         );
