@@ -1,18 +1,151 @@
-# Research Ideation Tools/Systems Literature Review
+# Research Ideation Tools — Interactive Literature Review
 
-An interactive literature review dashboard for exploring research on **Research Ideation Tools and Systems**. Papers are categorized by tool type, research stages, and underlying cognitive frameworks ([Guilford's](https://en.wikipedia.org/wiki/JP_Guilford), [Wallas's](https://en.wikipedia.org/wiki/Graham_Wallas), and [Boden's](https://en.wikipedia.org/wiki/Margaret_Boden) theories of computational creativity).
+An interactive dashboard for exploring the growing body of research on **AI-assisted research ideation and scientific creativity support tools (CSTs)**. Papers are categorized by tool type, research ideation stage, and underlying cognitive-creativity frameworks ([Guilford](https://en.wikipedia.org/wiki/JP_Guilford), [Wallas](https://en.wikipedia.org/wiki/Graham_Wallas), [Boden](https://en.wikipedia.org/wiki/Margaret_Boden)).
 
 🔗 **Live dashboard:** [https://JialingJia.github.io/CST_tool_review/](https://JialingJia.github.io/CST_tool_review/)
 
+> Dashboard UI and interactive filtering experience co-designed and developed by **Antigravity (Google DeepMind AI)**.
+
 ---
 
-## Tool Type Taxonomy
+## What's Inside
 
-| Tag | Meaning |
+The dashboard has three panels:
+
+- **Paper Database** — filterable table of 57 categorized papers (updated monthly), searchable by tool type, research stage, creativity framework, and keyword.
+- **Literature Review** — a structured prose review of the field, updated monthly with new papers. Readers can highlight any sentence and leave a comment directly on the page.
+- **Contributors** — credits for community members and the AI pipeline that keep the review current.
+
+---
+
+## Taxonomy
+
+### Tool Types
+
+| Tag | Design philosophy | Core question |
+|---|---|---|
+| **Type 1** | Scaffolding Human Cognitive Processes | The human generates ideas; the tool restructures, prompts, or extends their thinking. |
+| **Type 2** | Computational Creativity with Human as Evaluator | The system generates ideas; the human selects, filters, and adapts them. |
+| **Type 1 + Type 2** | Hybrid | Both human and system make substantive intellectual contributions — agency is distributed. |
+| **Survey / Theory** | Synthesis or framework paper | No tool artifact; primary contribution is a review, taxonomy, or conceptual model. |
+| **Empirical Study** | Data collection | Primary contribution is findings about human creative behavior or tool effects. |
+
+### Research Ideation Stages (Type 1 & Hybrid tools)
+
+| Stage | What it covers |
 |---|---|
-| **Type 1** | Scaffolding Human Cognitive Processes |
-| **Type 2** | Computational Creativity with Human as Evaluator |
-| **Survey / Theory** | Survey, taxonomy, or conceptual/theoretical paper (no tool artifact) |
-| **Empirical Study** | User study, experiment, or field study (no tool artifact) |
+| **Information Foraging** | Literature search, knowledge discovery, paper recommendation and synthesis |
+| **Problem Framing** | Identifying gaps, defining questions, mapping the scope of an inquiry |
+| **Analysis & Sensemaking** | Interpreting data, coding, affinity mapping, pattern finding |
+| **Research Planning** | Methodology design, protocol structuring, workflow organization |
 
-*Dashboard UI and interactive filtering experience co-designed and developed by **Antigravity (Google DeepMind AI)**.*
+### Creativity Frameworks
+
+Papers are also tagged by the cognitive/computational creativity models they engage:
+
+- **Wallas stages** — Preparation, Incubation, Illumination, Verification
+- **Boden types** (for Type 2 tools) — Combinational, Exploratory, Transformational
+- **Thinking types** — Divergent, Convergent
+
+---
+
+## Contributing
+
+### Leaving a Comment on the Live Site
+
+The easiest way to contribute. On the [live dashboard](https://JialingJia.github.io/CST_tool_review/):
+
+1. Navigate to the **Literature Review** tab.
+2. Highlight any sentence you want to comment on.
+3. A comment box will appear — type your feedback and submit (GitHub login required).
+
+Comments can:
+- **Recommend a paper** for inclusion (paste the URL in your comment).
+- **Correct a factual claim** about a paper's study design, findings, or contribution.
+- **Challenge a classification** (e.g., "this tool should be Type 2 because…").
+- **Flag an overstatement** (e.g., "the study didn't actually measure authorship").
+
+The monthly pipeline reviews all comments and acts on substantive ones automatically.
+
+### Adding Papers Directly or Co-writing
+
+To add a paper manually, append an entry to `src/data/data_filtered.js` following the existing schema:
+
+```js
+{
+  id: "fN",                          // next sequential ID
+  title: "...",
+  authors: ["Last, F.", "Last, F."],
+  year: 2025,
+  venue: "Conference or journal name",
+  url: "https://doi.org/...",
+  core_contributions: "One-paragraph summary of what the paper contributes and why it matters for this corpus.",
+  tool_types: ["Type 1"],            // Type 1 | Type 2 | Type 1 + Type 2 | Survey / Theory | Empirical Study
+  research_stages: ["Problem Framing"],  // for Type 1 and Hybrid tools only; else []
+  creative_thinking_types: ["Divergent"],
+  wallas_stages: ["Preparation", "Illumination"],
+  bodens_types: ["Exploratory"]      // for Type 2 and Hybrid tools only; else []
+}
+```
+
+Then add a corresponding prose paragraph to `src/data/literature_review.md` in the appropriate section.
+
+---
+
+## Monthly Pipeline
+
+This repository is kept current by an automated monthly pipeline (runs on the 1st of each month) powered by **Claude (Anthropic)**. Each run:
+
+1. **Collects community comments** from Firestore (submitted via the live site's highlight layer).
+2. **Searches for new papers** — recent publications from CHI, UIST, CSCW, CHIIR, arXiv cs.HC, and cs.AI.
+3. **Filters for scope** — only papers on research ideation, scientific creativity, or CSTs for academic research are admitted.
+4. **Categorizes each new paper** using the CST taxonomy above.
+5. **Updates the literature review** — inserts new prose and applies substantive community corrections.
+6. **Appends credits** to `acknowledgements.md` and `contributors.js`.
+
+Pipeline configuration lives in `/Users/houjiangliu/Documents/Claude/Scheduled/cst-monthly-pipeline/SKILL.md`.
+
+---
+
+## Project Structure
+
+```
+CST_tool_review/
+├── src/
+│   ├── components/
+│   │   ├── Dashboard.jsx          # Paper database table (AG Grid)
+│   │   ├── LiteratureReview.jsx   # Prose review with highlight layer
+│   │   ├── HighlightLayer.jsx     # Comment submission UI (Firestore)
+│   │   └── ContributorsPanel.jsx  # Contributors display
+│   ├── data/
+│   │   ├── data_filtered.js       # ★ Paper database — source of truth
+│   │   ├── literature_review.md   # ★ Prose review — updated by pipeline
+│   │   ├── acknowledgements.md    # Monthly credit log (append-only below pipeline comment)
+│   │   └── contributors.js        # Structured mirror of acknowledgements for UI
+│   └── firebase.js                # Firestore config (highlight layer)
+├── collect_comments.py            # Fetches pending comments from Firestore
+├── pending_instructions.json      # Comments awaiting pipeline action
+├── contributor_credits.json       # Contributor metadata for credit generation
+└── firebase-service-account.json  # Service account key (not committed)
+```
+
+> **★ Key rule**: `data_filtered.js` is the source of truth for what's in the corpus. A paper being cited in the prose of `literature_review.md` does **not** mean it's in the database — always check the data file directly.
+
+---
+
+## Local Development
+
+```bash
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # production build → dist/
+npm run deploy    # build + push to gh-pages branch
+```
+
+Requires Node 18+. The highlight/comment layer requires a Firebase project and a valid `firebase-service-account.json` for the collector script.
+
+---
+
+## Acknowledgements
+
+See [src/data/acknowledgements.md](src/data/acknowledgements.md) for a full log of monthly pipeline runs and community contributions.
