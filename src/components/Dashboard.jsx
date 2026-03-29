@@ -18,7 +18,7 @@ const FIELD_COLORS = {
   research_stages: {
     'Information Foraging': { bg: '#fefce8', text: '#713f12', border: '#fde047' },
     'Problem Framing': { bg: '#f0fdf4', text: '#14532d', border: '#86efac' },
-    'Ideation': { bg: '#eff6ff', text: '#1e40af', border: '#93c5fd' },
+    'Idea Generation': { bg: '#eff6ff', text: '#1e40af', border: '#93c5fd' },
     'Experiment Design': { bg: '#fff1f2', text: '#9f1239', border: '#fca5a5' },
     'Analysis & Sensemaking': { bg: '#f5f3ff', text: '#4c1d95', border: '#c4b5fd' },
     _default: { bg: '#f1f5f9', text: '#334155', border: '#cbd5e1' },
@@ -51,7 +51,7 @@ function getTagStyle(field, tag) {
 // ── Tag fields config ───────────────────────────────────────────────────────
 const TAG_FIELDS = [
   { field: 'tool_types', label: 'Tool Types' },
-  { field: 'research_stages', label: 'Research Stages' },
+  { field: 'research_stages', label: 'Research Ideation Stages' },
   { field: 'creative_thinking_types', label: "Guilford's Thinking Types" },
   { field: 'wallas_stages', label: "Wallas's Stages" },
   { field: 'bodens_types', label: "Boden's Types" },

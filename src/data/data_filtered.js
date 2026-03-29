@@ -739,11 +739,11 @@ export const filteredData = [
     year: 2023,
     venue: "Proceedings of the 2023 Conference on Human Information Interaction and Retrieval (CHIIR 2023)",
     url: "https://doi.org/10.1145/3576840.3578294",
-    core_contributions: "SearchIdea is a web-based tool that scaffolds creative thinking during academic search by enabling users to actively reorganize, annotate, and synthesize search results — keeping the researcher as the primary idea generator.",
+    core_contributions: "SearchIdea is a web-based tool that scaffolds creative thinking during academic search by enabling users to actively reorganize, annotate, and synthesize search results — keeping the researcher as the primary idea generator. Spans the preparatory–generative boundary: search and cluster/compare views support information foraging and sensemaking (§2.2.2.1 Preparatory Scaffolding), while the Idea Board scaffolds hypothesis formation (§2.2.2.2 Generative Support).",
     tool_types: ["Type 1"],
-    research_stages: ["Information Foraging", "Problem Framing"],
+    research_stages: ["Information Foraging", "Analysis & Sensemaking", "Problem Framing"],
     creative_thinking_types: ["Divergent"],
-    wallas_stages: ["Preparation", "Incubation"],
+    wallas_stages: ["Preparation", "Incubation", "Illumination"],
     bodens_types: []
   },
 
@@ -821,9 +821,9 @@ export const filteredData = [
     year: 2025,
     venue: "arXiv [cs.AI]",
     url: "https://doi.org/10.48550/arXiv.2502.18864",
-    core_contributions: "The AI co-scientist is a multi-agent system built on Gemini 2.0 that autonomously generates, debates, and evolves novel scientific hypotheses and research proposals through specialized agents (Generation, Reflection, Ranking, Evolution) operating in a tournament-style framework, validated through real-world biomedical discovery tasks.",
+    core_contributions: "The AI co-scientist is a multi-agent system built on Gemini 2.0 that autonomously generates, debates, and evolves novel scientific hypotheses and research proposals through specialized agents (Generation, Reflection, Ranking, Evolution) operating in a tournament-style framework, validated through real-world biomedical discovery tasks. An AI Automation system: the researcher provides a research goal and evaluates the final proposals; all hypothesis generation, critique, and evolution occurs autonomously within the multi-agent loop.",
     tool_types: ["Type 2"],
-    research_stages: ["Problem Framing"],
+    research_stages: [],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: ["Exploratory"]
@@ -922,6 +922,269 @@ export const filteredData = [
     research_stages: [],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
+    bodens_types: []
+  },
+
+  // ── ENTRIES 58–73 ─────────────────── (framework update: Jialingjia §2.2, March 2026) ──
+  // Expert Systems (AI Automation era — §2.2.1)
+
+  // ── ENTRY 58 ──────────────────────────────────────────────────────────────
+  {
+    id: "f58",
+    title: "BACON: Discovering Scientific Laws via Computer Programs",
+    authors: ["Langley, P.", "Simon, H.A.", "Bradshaw, G.L.", "Zytkow, J.M."],
+    year: 1987,
+    venue: "MIT Press",
+    url: "https://mitpress.mit.edu/9780262121347/scientific-discovery/",
+    core_contributions: "BACON is a family of rule-based discovery programs that rediscovered empirical laws (Kepler's Third Law, Ohm's Law, Black's specific heat law) by systematically searching numeric data for invariant relationships. It demonstrated that the pattern-detection stages of scientific discovery could be computationally formalized through heuristic search over symbolic data representations, without domain-specific prior knowledge — an early landmark of the AI Automation paradigm for scientific creativity.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation", "Illumination"],
+    bodens_types: ["Exploratory"]
+  },
+
+  // ── ENTRY 59 ──────────────────────────────────────────────────────────────
+  {
+    id: "f59",
+    title: "Heuristic DENDRAL: A Program for Generating Explanatory Hypotheses in Organic Chemistry",
+    authors: ["Buchanan, B.G.", "Sutherland, G.", "Feigenbaum, E.A."],
+    year: 1969,
+    venue: "Machine Intelligence 4",
+    url: "https://stacks.stanford.edu/file/druid:yp838gg5013/yp838gg5013.pdf",
+    core_contributions: "DENDRAL is an expert system that automatically generates and ranks molecular structure hypotheses from mass spectrometry data using a plan-generate-test architecture and encoded domain chemistry rules. It was among the first programs to demonstrate expert-level autonomous scientific hypothesis generation, establishing the feasibility of the AI Automation paradigm for knowledge-intensive discovery tasks. The system's researcher evaluates final outputs but does not participate in hypothesis generation.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation", "Illumination"],
+    bodens_types: ["Exploratory"]
+  },
+
+  // ── ENTRY 60 ──────────────────────────────────────────────────────────────
+  {
+    id: "f60",
+    title: "The Processes of Scientific Discovery: The Strategy of Experimentation",
+    authors: ["Kulkarni, D.", "Simon, H.A."],
+    year: 1988,
+    venue: "Cognitive Science",
+    url: "https://doi.org/10.1016/0364-0213(88)90018-8",
+    core_contributions: "KEKADA is a production-rule simulation that models the discovery of the urea cycle by biochemist Hans Krebs, capturing the strategic heuristics of experimental design and anomaly-driven inquiry. By recreating the path of actual scientific discoveries through symbolic rule execution, KEKADA showed that key aspects of scientific discovery strategy — experiment selection, anomaly identification, hypothesis revision — could be modeled computationally, situating it firmly in the AI Automation paradigm.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Divergent", "Convergent"],
+    wallas_stages: ["Preparation", "Illumination", "Verification"],
+    bodens_types: ["Exploratory"]
+  },
+
+  // ── ENTRY 61 ──────────────────────────────────────────────────────────────
+  {
+    id: "f61",
+    title: "EURISKO: A Program That Learns New Heuristics and Domain Concepts",
+    authors: ["Lenat, D.B."],
+    year: 1983,
+    venue: "Artificial Intelligence",
+    url: "https://doi.org/10.1016/S0004-3702(83)80005-8",
+    core_contributions: "EURISKO is a self-modifying heuristic discovery program that invents new concepts and rules by applying and revising its own meta-level heuristics across domains including mathematics, VLSI design, and naval war games. Its ability to modify the heuristics it uses — not merely traverse a fixed search space — gives it a transformational character in Boden's sense: EURISKO restructures its own conceptual machinery rather than only exploring within a predefined space. Represents one of the most ambitious early demonstrations of autonomous machine creativity.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Divergent"],
+    wallas_stages: ["Preparation", "Illumination"],
+    bodens_types: ["Exploratory", "Transformational"]
+  },
+
+  // LLM-Based Agents (AI Automation era — §2.2.1)
+
+  // ── ENTRY 62 ──────────────────────────────────────────────────────────────
+  {
+    id: "f62",
+    title: "SciAgents: Automating Scientific Discovery Through Multi-Agent Intelligent Graph Reasoning",
+    authors: ["Buehler, M.J."],
+    year: 2024,
+    venue: "arXiv [cs.AI]",
+    url: "https://arxiv.org/abs/2409.05556",
+    core_contributions: "SciAgents is a multi-agent system that automates scientific discovery by combining large language models with knowledge graph reasoning over domain literature. Specialized agents — including Ontologist, Scientist, Critic, and Expander roles — collaborate to generate, critique, and refine novel scientific hypotheses grounded in cross-domain relationships extracted from the graph. Demonstrated on biomaterials science, the system autonomously generates research directions that combine distant knowledge domains without human direction of the ideation process.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Divergent"],
+    wallas_stages: ["Preparation", "Illumination"],
+    bodens_types: ["Exploratory", "Combinational"]
+  },
+
+  // ── ENTRY 63 ──────────────────────────────────────────────────────────────
+  {
+    id: "f63",
+    title: "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+    authors: ["Lu, C.", "Lu, C.", "Lange, R.T.", "Foerster, J.", "Clune, J.", "Ha, D."],
+    year: 2024,
+    venue: "arXiv [cs.AI]",
+    url: "https://arxiv.org/abs/2408.06292",
+    core_contributions: "The AI Scientist is an end-to-end automated research pipeline in which an LLM generates novel research ideas, implements experimental code, runs experiments, analyzes results, and writes a full scientific paper — all without human intervention during execution. The system includes an automated reviewer agent that evaluates generated papers against conference standards. Demonstrated across three machine learning subfields, it represents a paradigmatic instantiation of the AI Automation design goal, reducing the researcher's role to defining the problem scope and evaluating finished manuscripts.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Divergent", "Convergent"],
+    wallas_stages: ["Preparation", "Illumination", "Verification"],
+    bodens_types: ["Exploratory"]
+  },
+
+  // ── ENTRY 64 ──────────────────────────────────────────────────────────────
+  {
+    id: "f64",
+    title: "Agent Laboratory: Using LLM Agents as Research Assistants",
+    authors: ["Schmidgall, S.", "Su, Y.", "Wang, Z.", "Sun, L.", "Wu, Z.", "Yu, X.", "Liu, Y.", "Baraniuk, R."],
+    year: 2025,
+    venue: "arXiv [cs.AI]",
+    url: "https://arxiv.org/abs/2501.04227",
+    core_contributions: "Agent Laboratory is a fully autonomous research workflow in which specialized LLM agents (Literature Review, Experimentation, Report Writing) execute a complete research project from a problem statement to a written paper. The system introduces mle-solver, an ML engineering agent, and uses automated evaluation against human researcher baselines. Agent Laboratory substantially reduces the cost of running machine learning research experiments while maintaining paper quality, demonstrating the scalability of AI Automation for end-to-end scientific work.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Divergent", "Convergent"],
+    wallas_stages: ["Preparation", "Illumination", "Verification"],
+    bodens_types: ["Exploratory"]
+  },
+
+  // ── ENTRY 65 ──────────────────────────────────────────────────────────────
+  {
+    id: "f65",
+    title: "Automated Discovery of Fundamental Variables Hidden in Experimental Data",
+    authors: ["Liu, Z.", "Tegmark, M."],
+    year: 2022,
+    venue: "Nature Computational Science",
+    url: "https://doi.org/10.1038/s43588-022-00281-6",
+    core_contributions: "AutoDiscovery is an algorithm that automatically identifies fundamental variables underlying physical systems directly from experimental measurements, without domain knowledge. The system applies an information-theoretic criterion to discover minimal sets of variables that fully describe system behavior, rediscovering known physical quantities (angles, angular velocities) from video data of pendulum and double-pendulum systems. It exemplifies AI Automation applied to the problem construction stage of scientific inquiry — autonomously determining what variables matter before hypothesis generation begins.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation", "Illumination"],
+    bodens_types: ["Exploratory"]
+  },
+
+  // ── ENTRY 66 ──────────────────────────────────────────────────────────────
+  {
+    id: "f66",
+    title: "Automated Scientific Discovery: From Equation Discovery to Autonomous Agents",
+    authors: ["Krenn, M.", "Pollice, R.", "Guo, S.Y.", "Aldeghi, M.", "Cervera-Lierta, A.", "Friederich, P.", "Gómez-Bombarelli, R.", "Häse, F.", "Kůs, P.", "Nigam, A.", "Roch, L.M.", "Ser, C.T.", "Vinokur, V.", "Aspuru-Guzik, A."],
+    year: 2022,
+    venue: "Nature Reviews Physics",
+    url: "https://doi.org/10.1038/s42254-022-00518-3",
+    core_contributions: "A comprehensive perspective on the trajectory of AI-driven scientific discovery, surveying automated equation discovery systems (symbolic regression, BACON-family programs) through to modern autonomous research agents. The paper introduces \"Popper\" as a conceptual framework for automated hypothesis generation and falsification loops inspired by Karl Popper's philosophy of science, arguing that true scientific discovery requires systems that can generate and rigorously test hypotheses in closed loops. Positions AI Automation as the leading edge of computational scientific creativity.",
+    tool_types: ["Survey / Theory"],
+    research_stages: [],
+    creative_thinking_types: ["Divergent", "Convergent"],
+    wallas_stages: ["Preparation", "Illumination", "Verification"],
+    bodens_types: []
+  },
+
+  // ── ENTRY 67 ──────────────────────────────────────────────────────────────
+  {
+    id: "f67",
+    title: "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+    authors: ["Shojaee, P.", "Meidani, K.", "Barati Farimani, A.", "Reddy, C.K."],
+    year: 2024,
+    venue: "arXiv [cs.LG]",
+    url: "https://arxiv.org/abs/2404.18400",
+    core_contributions: "LLM-SR uses large language models to generate candidate scientific equations as executable programs, iteratively evolving them using evolutionary search guided by LLM scientific priors and symbolic regression fitness scores. The approach substantially outperforms prior symbolic regression methods on physics benchmarks, discovering correct closed-form equations for Kepler's third law and pendulum dynamics from noisy data. It extends AI Automation to the equation-discovery layer of research, where the generative and search processes run autonomously without researcher involvement in hypothesis formation.",
+    tool_types: ["Type 2"],
+    research_stages: [],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation", "Illumination"],
+    bodens_types: ["Exploratory"]
+  },
+
+  // Preparatory Scaffolding Tools (Mixed-Initiative — §2.2.2.1)
+
+  // ── ENTRY 68 ──────────────────────────────────────────────────────────────
+  {
+    id: "f68",
+    title: "CiteRead: Integrating Localized Citation Contexts into Scientific Paper Reading",
+    authors: ["Rachatasumrit, N.", "Fok, R.", "Zhang, A.X.", "Weld, D.S."],
+    year: 2022,
+    venue: "ACM IUI",
+    url: "https://doi.org/10.1145/3490099.3511162",
+    core_contributions: "CiteRead is a reading interface that augments scientific papers with inline citation contexts — showing how each cited paper has been used by other works in the field, surfaced directly alongside the in-text citation. By making the citation ecosystem visible during reading, CiteRead scaffolds the researcher's information foraging process: rather than following citation trails to external pages, readers can immediately assess a cited paper's influence and relevance. A controlled study shows faster orientation to new research areas without loss of comprehension.",
+    tool_types: ["Type 1"],
+    research_stages: ["Information Foraging"],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation"],
+    bodens_types: []
+  },
+
+  // ── ENTRY 69 ──────────────────────────────────────────────────────────────
+  {
+    id: "f69",
+    title: "CiteSee: Augmenting Citations in Scientific Papers with Persistent and Personalized Historical Context",
+    authors: ["Kang, D.", "Head, A.", "Weld, D.S."],
+    year: 2023,
+    venue: "ACM CHI",
+    url: "https://doi.org/10.1145/3544548.3580847",
+    core_contributions: "CiteSee augments in-text citations in scientific papers with personalized visual overlays that encode the reader's prior interaction history with cited works — marking papers the reader has already opened, annotated, or saved. By making personal reading history persistent and visible across papers, CiteSee reduces the cognitive overhead of tracking what is already known, helping researchers prioritize which citations to follow during information foraging without interrupting the flow of reading.",
+    tool_types: ["Type 1"],
+    research_stages: ["Information Foraging"],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation"],
+    bodens_types: []
+  },
+
+  // ── ENTRY 70 ──────────────────────────────────────────────────────────────
+  {
+    id: "f70",
+    title: "ComLittee: Literature Discovery with Personal Elected Author Committees",
+    authors: ["Kang, D.", "Head, A.", "Hearst, M.A.", "Weld, D.S."],
+    year: 2023,
+    venue: "ACM CHI",
+    url: "https://doi.org/10.1145/3544548.3581371",
+    core_contributions: "ComLittee is a literature discovery interface in which researchers select a personal \"committee\" of authors whose papers best represent the work they care about. The system uses this committee to recommend new papers and rank search results, providing a personalized filter tuned to the researcher's intellectual identity rather than keyword matching alone. A user study shows researchers discover more relevant papers with less effort. ComLittee scaffolds information foraging by grounding discovery in human-curated taste rather than algorithmic opaqueness.",
+    tool_types: ["Type 1"],
+    research_stages: ["Information Foraging", "Analysis & Sensemaking"],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation"],
+    bodens_types: []
+  },
+
+  // ── ENTRY 71 ──────────────────────────────────────────────────────────────
+  {
+    id: "f71",
+    title: "Relatedly: Scaffolding Literature Reviews with Existing Related Work Sections",
+    authors: ["Choi, Y.", "Head, A.", "Kang, D.", "Weld, D.S."],
+    year: 2022,
+    venue: "ACM CHI",
+    url: "https://doi.org/10.1145/3491102.3502047",
+    core_contributions: "Relatedly helps researchers discover related work by repurposing existing related work sections from papers in the corpus. Given a seed set of papers, Relatedly surfaces other papers' related work sections that overlap substantially, letting the researcher see how prior authors organized relevant literature. This scaffolds both information foraging (discovering overlooked papers) and sensemaking (understanding how the research community structures the space), all without requiring the researcher to formulate new queries.",
+    tool_types: ["Type 1"],
+    research_stages: ["Information Foraging", "Analysis & Sensemaking"],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation"],
+    bodens_types: []
+  },
+
+  // ── ENTRY 72 ──────────────────────────────────────────────────────────────
+  {
+    id: "f72",
+    title: "Threddy: An Interactive System for Personalizing Threads of Papers and Synthesizing Information",
+    authors: ["Fok, R.", "Zhang, A.X.", "Weld, D.S."],
+    year: 2023,
+    venue: "ACM CHI",
+    url: "https://doi.org/10.1145/3544548.3581011",
+    core_contributions: "Threddy supports literature review by helping researchers build and navigate personalized \"threads\" — topically coherent paths through a paper corpus that connect thematically related works across time and venue. Unlike flat paper lists or citation graphs, threads organize papers around a conceptual through-line that the researcher defines. Threddy scaffolds analysis and sensemaking by externalizing the researcher's evolving understanding of a topic, and supports information foraging by surfacing related papers likely to extend each thread.",
+    tool_types: ["Type 1"],
+    research_stages: ["Information Foraging", "Analysis & Sensemaking"],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation"],
+    bodens_types: []
+  },
+
+  // ── ENTRY 73 ──────────────────────────────────────────────────────────────
+  {
+    id: "f73",
+    title: "Passage: Facilitating Research Paper Discovery via Scholar-Curated Passages",
+    authors: ["Kang, D.", "Head, A.", "Hearst, M.A.", "Weld, D.S."],
+    year: 2023,
+    venue: "ACM SIGIR",
+    url: "https://doi.org/10.1145/3539618.3591913",
+    core_contributions: "Passage is a paper discovery system in which researchers save and annotate specific text passages — rather than whole papers — as the unit of interest. These passage collections are used to drive recommendation and search: the system identifies new papers containing passages similar to the researcher's saved ones, surfacing relevant work at the level of specific arguments or findings rather than overall paper topic. A study shows that passage-level bookmarking captures finer-grained research interests and yields more targeted discovery than paper-level systems.",
+    tool_types: ["Type 1"],
+    research_stages: ["Information Foraging"],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation"],
     bodens_types: []
   }
 

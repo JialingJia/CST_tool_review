@@ -49,15 +49,39 @@ If the `literature-filter` skill is not available, apply manual scope judgment u
 ---
 
 ## Step 4 — Categorize Each New Paper
-For each paper that **passed the filter** in Step 3, invoke the **cst-categorizer** skill (use the Skill tool: `skill: "cst-categorizer"`). Follow its full instructions to assign:
+
+For each paper that **passed the filter** in Step 3, invoke the **cst-categorizer** skill (use the Skill tool: `skill: "cst-categorizer"`). Follow its full instructions.
+
+The categorizer now applies a **two-level framework** grounded in Jialingjia's §2.2 dissertation framework and Shneiderman (2020):
+
+**Level 1 — Primary Paradigm** (apply first):
+- **AI Automation** (emulation goal): The system runs the research pipeline autonomously; the researcher is a downstream consumer of machine-generated outputs. Includes expert systems (BACON, DENDRAL, KEKADA, EURISKO) and LLM-based agents (The AI Scientist, SciAgents, Agent Laboratory, AI Co-Scientist, etc.). Always Type 2.
+- **Mixed-Initiative** (application goal, Horvitz 1999): The human remains the primary creative agent; the system augments without replacing. May be Type 1 or Type 2 depending on who generates the creative content.
+
+**Level 2 — Sub-type for Mixed-Initiative tools**:
+- **Preparatory Scaffolding** (§2.2.2.1): Tools supporting knowledge-building and sensemaking *before* active ideation (Information Foraging, Analysis & Sensemaking stages). Examples: CiteRead, CiteSee, PaperWeaver, Synergi, Relatedly.
+- **Generative Support** (§2.2.2.2): Tools supporting question formulation, hypothesis generation, and study planning *during* active ideation (Problem Framing, Research Planning stages). Examples: CoQuest, Scideator, Perspectra, Cocoa.
+
+Assign from the full schema:
 - `tool_types` (Type 1 / Type 2 / Survey / Theory / Empirical Study)
 - `bodens_types`, `wallas_stages`, `creative_thinking_types`
 - A confidence score
 
+**Important**: AI Automation tools (Type 2 systems that run the pipeline autonomously) receive empty `research_stages: []` — they replace rather than support the researcher's stage activity.
+
 ---
 
 ## Step 5 — Assign Research Ideation Stages
-For papers categorized as Type 1, invoke the **research-ideation-stages** skill (use the Skill tool: `skill: "research-ideation-stages"`). Assign the appropriate `research_stages` tags from the four-stage framework (Information Foraging, Problem Framing, Analysis & Sensemaking, Research Planning).
+
+For Mixed-Initiative tool papers (both Type 1 and Type 2 that maintain active researcher engagement), invoke the **research-ideation-stages** skill (use the Skill tool: `skill: "research-ideation-stages"`). Assign `research_stages` tags from the four-stage framework.
+
+**Two-cluster organizing principle** (updated March 2026):
+- **Preparatory cluster**: Information Foraging + Analysis & Sensemaking — tools supporting the researcher before active ideation (Wallas preparation phase; §2.2.2.1).
+- **Generative cluster**: Problem Framing + Research Planning — tools supporting the researcher during active ideation (Wallas illumination phase; §2.2.2.2).
+
+Identify which cluster(s) a tool primarily serves before assigning specific stages. A tool may span clusters (e.g., SearchIdea spans preparatory and generative) — assign all applicable stages when genuinely multi-functional.
+
+**Do not assign research_stages to full AI Automation tools** (The AI Scientist, SciAgents, Agent Laboratory, AI Co-Scientist, BACON, DENDRAL, etc.) — these systems replace the researcher's stage activity.
 
 ---
 

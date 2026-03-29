@@ -48,3 +48,16 @@ contributions. Powered by [claude.ai](https://claude.ai).
 
 - **Claude (Anthropic)** — Reclassified IdeaSynth as Type 1 + Type 2 (Hybrid); moved its discussion from §Scaffolding Human Cognition to §Hybrid Systems: Co-Creation Across the Human-AI Boundary. Updated `data_filtered.js` entry accordingly.
   *(Run date: 2026-03-26)*
+
+### March 2026 (Framework Update: 2026-03-28)
+
+- **Claude (Anthropic)** — Major framework update based on Jialingjia's Section 2.2 dissertation framework ("The Design Spectrum of Computational Research Ideation"):
+  - Added 16 papers to the database (f58–f73): BACON, DENDRAL, KEKADA, EURISKO (expert systems era); SciAgents, The AI Scientist, Agent Laboratory, AutoDiscovery, Popper/Krenn et al., LLM-SR (LLM agent era); CiteRead, CiteSee, ComLittee, Relatedly, Threddy, Passage (preparatory scaffolding tools).
+  - Recategorized SearchIdea (f46): added Analysis & Sensemaking stage and updated `core_contributions` to reflect its dual preparatory-generative role per §2.2.2.1–2.2.2.2.
+  - Recategorized AI Co-Scientist (f51): cleared `research_stages` to reflect AI Automation paradigm (researcher as downstream consumer).
+  - Rewrote `literature_review.md` in full to align with the AI Automation vs. Mixed-Initiative primary axis and the preparatory vs. generative sub-distinction within mixed-initiative tools.
+  - Added revised `cst-categorizer/SKILL.md` and `research-ideation-stages/SKILL.md` to `CST_tool_review/skills/` reflecting the new framework, Shneiderman (2020) emulation/application goals, and Horvitz (1999) mixed-initiative origins.
+  - Updated `cst-monthly-pipeline/SKILL.md` to reference the new dual-paradigm structure in categorization steps.
+  *(Run date: 2026-03-28)*
+
+- **Houji** (@JialingJia) — Contributed Section 2.2 dissertation framework ("The Design Spectrum of Computational Research Ideation") as the organizing schema for the review. Framework distinguishes AI Automation (emulation goal, Shneiderman 2020) from Mixed-Initiative tools (application goal, Horvitz 1999), and within the latter distinguishes Preparatory Scaffolding from Generative Support. *(2026-03-28)*

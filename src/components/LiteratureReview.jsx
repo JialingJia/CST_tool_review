@@ -190,42 +190,134 @@ function CitationChip({ inner }) {
   );
 }
 
-// ── Prose renderer ────────────────────────────────────────────────────────────
-function renderParts(text) {
+// ── Inline markdown renderer (bold, italic, links, citations) ────────────────
+function renderInline(text) {
+  // Split on **bold**, *italic*, [label](url), and citation patterns
+  const TOKEN_RE = /\*\*([^*]+)\*\*|\*([^*]+)\*|\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
   const parts = [];
   let last = 0;
-  for (const { start, end, inners } of collectMatches(text)) {
-    if (start > last) parts.push({ type: 'text', content: text.slice(last, start) });
-    parts.push({ type: 'cite-group', inners });
-    last = end;
+
+  // First collect citation matches from the citation logic
+  const citeMatches = collectMatches(text);
+  // Merge inline-format matches with citation matches (sorted by position)
+  const inlineMatches = [];
+  let m;
+  const re = new RegExp(TOKEN_RE.source, 'g');
+  while ((m = re.exec(text)) !== null) {
+    inlineMatches.push({ start: m.index, end: m.index + m[0].length, raw: m });
   }
-  if (last < text.length) parts.push({ type: 'text', content: text.slice(last) });
+
+  // Build a unified sorted event list
+  const events = [
+    ...citeMatches.map(c => ({ ...c, kind: 'cite' })),
+    ...inlineMatches.map(i => ({ ...i, kind: 'inline' })),
+  ].sort((a, b) => a.start - b.start);
+
+  // Deduplicate overlaps (citation takes priority)
+  const deduped = [];
+  let prevEnd = -1;
+  for (const ev of events) {
+    if (ev.start >= prevEnd) { deduped.push(ev); prevEnd = ev.end; }
+  }
+
+  deduped.forEach((ev, idx) => {
+    if (ev.start > last) parts.push(<span key={`t-${idx}`}>{text.slice(last, ev.start)}</span>);
+    if (ev.kind === 'cite') {
+      parts.push(
+        <span key={`c-${idx}`} style={{ display: 'inline-flex', gap: '3px', alignItems: 'baseline' }}>
+          {ev.inners.map((inner, j) => <CitationChip key={j} inner={inner} />)}
+        </span>
+      );
+    } else {
+      const raw = ev.raw;
+      if (raw[1] !== undefined) {
+        // **bold**
+        parts.push(<strong key={`b-${idx}`} style={{ fontWeight: 700, color: '#1e293b' }}>{raw[1]}</strong>);
+      } else if (raw[2] !== undefined) {
+        // *italic*
+        parts.push(<em key={`i-${idx}`}>{raw[2]}</em>);
+      } else if (raw[3] !== undefined) {
+        // [label](url)
+        parts.push(
+          <a key={`a-${idx}`} href={raw[4]} target="_blank" rel="noopener noreferrer"
+            style={{ color: '#2563eb', textDecoration: 'underline', textUnderlineOffset: '2px' }}>
+            {raw[3]}
+          </a>
+        );
+      }
+    }
+    last = ev.end;
+  });
+  if (last < text.length) parts.push(<span key="tail">{text.slice(last)}</span>);
   return parts;
 }
 
 function Prose({ body }) {
-  const paragraphs = body.split(/\n\n+/).filter(Boolean);
-  return (
-    <>
-      {paragraphs.map((para, pi) => {
-        const parts = renderParts(para.replace(/\n/g, ' '));
-        return (
-          <p key={pi} style={{ margin: '0 0 1.1rem 0', lineHeight: 1.8, color: '#334155', fontSize: '0.95rem' }}>
-            {parts.map((part, i) =>
-              part.type === 'text'
-                ? <span key={i}>{part.content}</span>
-                : (
-                  // cite-group: one or more chips side-by-side
-                  <span key={i} style={{ display: 'inline-flex', gap: '3px', alignItems: 'baseline' }}>
-                    {part.inners.map((inner, j) => <CitationChip key={j} inner={inner} />)}
-                  </span>
-                )
-            )}
+  // Split into blocks: paragraphs, ### sub-headings, bullet lists
+  const blocks = body.split(/\n\n+/).filter(Boolean);
+  const elements = [];
+
+  blocks.forEach((block, bi) => {
+    const lines = block.split('\n');
+
+    // ### sub-heading
+    if (lines[0].startsWith('### ')) {
+      const heading = lines[0].replace(/^###\s+/, '');
+      elements.push(
+        <h3 key={`h-${bi}`} style={{
+          fontSize: '0.92rem', fontWeight: 700, color: '#1e293b',
+          margin: '1.4rem 0 0.5rem 0', letterSpacing: '-0.01em',
+          paddingBottom: '0.25rem', borderBottom: '1px solid #f1f5f9',
+        }}>
+          {heading}
+        </h3>
+      );
+      // remainder as a paragraph if any lines follow
+      const rest = lines.slice(1).join('\n').trim();
+      if (rest) {
+        elements.push(
+          <p key={`hp-${bi}`} style={{ margin: '0 0 1.1rem 0', lineHeight: 1.8, color: '#334155', fontSize: '0.95rem' }}>
+            {renderInline(rest)}
           </p>
         );
-      })}
-    </>
-  );
+      }
+      return;
+    }
+
+    // Bullet list block (all lines start with '- ')
+    if (lines.every(l => l.match(/^\s*-\s/) || l.match(/^\s{2,}/))) {
+      elements.push(
+        <ul key={`ul-${bi}`} style={{ margin: '0 0 1rem 0', paddingLeft: '1.25rem', listStyle: 'none' }}>
+          {lines.filter(l => l.match(/^\s*-\s/)).map((line, li) => {
+            const text = line.replace(/^\s*-\s/, '');
+            return (
+              <li key={li} style={{
+                fontSize: '0.9rem', lineHeight: 1.75, color: '#334155',
+                marginBottom: '0.2rem', position: 'relative', paddingLeft: '1rem',
+              }}>
+                <span style={{
+                  position: 'absolute', left: 0, top: '0.55em',
+                  width: '5px', height: '5px', borderRadius: '50%',
+                  background: '#94a3b8', display: 'inline-block',
+                }} />
+                {renderInline(text)}
+              </li>
+            );
+          })}
+        </ul>
+      );
+      return;
+    }
+
+    // Normal paragraph
+    elements.push(
+      <p key={`p-${bi}`} style={{ margin: '0 0 1.1rem 0', lineHeight: 1.8, color: '#334155', fontSize: '0.95rem' }}>
+        {renderInline(block.replace(/\n/g, ' '))}
+      </p>
+    );
+  });
+
+  return <>{elements}</>;
 }
 
 // ── Main Component ────────────────────────────────────────────────────────────
