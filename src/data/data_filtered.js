@@ -21,7 +21,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.1145/3498366.3505783",
     core_contributions: "Empirical investigation of how humans engage in creative thinking while searching for new ideas in academic contexts, identifying cognitive strategies and information-seeking patterns that support ideation.",
     tool_types: ["Empirical Study"],
-    research_stages: ["Information Foraging", "Problem Framing"],
+    research_stages: [],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Incubation"],
     bodens_types: []
@@ -261,7 +261,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/2025.findings-emnlp.477",
     core_contributions: "Proposes a Chain-of-Ideas framework in which LLM agents construct a progressive chain of research ideas grounded in literature trajectories, systematically exploring the frontier of a research field.",
     tool_types: ["Type 2"],
-    research_stages: ["Analysis & Sensemaking"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory"]
@@ -309,7 +309,7 @@ export const filteredData = [
     url: "http://dx.doi.org/10.18653/v1/P19-1191",
     core_contributions: "PaperRobot incrementally generates new scientific paper sections (background, future work, titles, abstracts) by reading existing papers and autonomously constructing novel scientific ideas and paper drafts.",
     tool_types: ["Type 2"],
-    research_stages: ["Analysis & Sensemaking"],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Illumination"],
     bodens_types: ["Combinational"]
@@ -823,7 +823,7 @@ export const filteredData = [
     url: "https://doi.org/10.48550/arXiv.2502.18864",
     core_contributions: "The AI co-scientist is a multi-agent system built on Gemini 2.0 that autonomously generates, debates, and evolves novel scientific hypotheses and research proposals through specialized agents (Generation, Reflection, Ranking, Evolution) operating in a tournament-style framework, validated through real-world biomedical discovery tasks. An AI Automation system: the researcher provides a research goal and evaluates the final proposals; all hypothesis generation, critique, and evolution occurs autonomously within the multi-agent loop.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: ["Exploratory"]
@@ -855,7 +855,7 @@ export const filteredData = [
     url: "https://doi.org/10.48550/arXiv.2511.02238",
     core_contributions: "Deep Ideation is a framework that integrates LLM agents with a scientific concept network — built from ~100,000 AI conference papers using keyword co-occurrence and contextual relationships — to generate novel, grounded research ideas via an explore-expand-evolve workflow. A critic engine trained on real-world reviewer feedback evaluates idea novelty and feasibility at each iteration. Experiments across multiple AI domains show a 10.67% improvement in overall idea quality versus baseline methods, with generated ideas exceeding top-conference acceptance thresholds on both novelty and feasibility.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory", "Combinational"]
@@ -871,7 +871,7 @@ export const filteredData = [
     url: "https://doi.org/10.48550/arXiv.2603.08127",
     core_contributions: "EvoScientist is an evolving multi-agent AI scientist framework that performs end-to-end scientific discovery through three specialized agents: a Researcher Agent (RA) for idea generation, an Engineer Agent (EA) for experiment execution, and an Evolution Manager Agent (EMA) that distills interaction histories into persistent memory to continuously improve research strategies across runs. Two memory modules — ideation memory and experimentation memory — enable the system to avoid repeating failed approaches and prioritize promising directions, addressing the static-pipeline limitation of prior autonomous AI scientist systems such as AI Scientist-v2.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Problem Framing", "Research Planning"],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: ["Exploratory", "Combinational"]
@@ -938,7 +938,7 @@ export const filteredData = [
     url: "https://mitpress.mit.edu/9780262121347/scientific-discovery/",
     core_contributions: "BACON is a family of rule-based discovery programs that rediscovered empirical laws (Kepler's Third Law, Ohm's Law, Black's specific heat law) by systematically searching numeric data for invariant relationships. It demonstrated that the pattern-detection stages of scientific discovery could be computationally formalized through heuristic search over symbolic data representations, without domain-specific prior knowledge — an early landmark of the AI Automation paradigm for scientific creativity.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Analysis & Sensemaking"],
     creative_thinking_types: ["Convergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory"]
@@ -954,7 +954,7 @@ export const filteredData = [
     url: "https://stacks.stanford.edu/file/druid:yp838gg5013/yp838gg5013.pdf",
     core_contributions: "DENDRAL is an expert system that automatically generates and ranks molecular structure hypotheses from mass spectrometry data using a plan-generate-test architecture and encoded domain chemistry rules. It was among the first programs to demonstrate expert-level autonomous scientific hypothesis generation, establishing the feasibility of the AI Automation paradigm for knowledge-intensive discovery tasks. The system's researcher evaluates final outputs but does not participate in hypothesis generation.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Analysis & Sensemaking"],
     creative_thinking_types: ["Convergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory"]
@@ -970,7 +970,7 @@ export const filteredData = [
     url: "https://doi.org/10.1016/0364-0213(88)90018-8",
     core_contributions: "KEKADA is a production-rule simulation that models the discovery of the urea cycle by biochemist Hans Krebs, capturing the strategic heuristics of experimental design and anomaly-driven inquiry. By recreating the path of actual scientific discoveries through symbolic rule execution, KEKADA showed that key aspects of scientific discovery strategy — experiment selection, anomaly identification, hypothesis revision — could be modeled computationally, situating it firmly in the AI Automation paradigm.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Problem Framing", "Research Planning"],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: ["Exploratory"]
@@ -986,7 +986,7 @@ export const filteredData = [
     url: "https://doi.org/10.1016/S0004-3702(83)80005-8",
     core_contributions: "EURISKO is a self-modifying heuristic discovery program that invents new concepts and rules by applying and revising its own meta-level heuristics across domains including mathematics, VLSI design, and naval war games. Its ability to modify the heuristics it uses — not merely traverse a fixed search space — gives it a transformational character in Boden's sense: EURISKO restructures its own conceptual machinery rather than only exploring within a predefined space. Represents one of the most ambitious early demonstrations of autonomous machine creativity.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory", "Transformational"]
@@ -1004,7 +1004,7 @@ export const filteredData = [
     url: "https://arxiv.org/abs/2409.05556",
     core_contributions: "SciAgents is a multi-agent system that automates scientific discovery by combining large language models with knowledge graph reasoning over domain literature. Specialized agents — including Ontologist, Scientist, Critic, and Expander roles — collaborate to generate, critique, and refine novel scientific hypotheses grounded in cross-domain relationships extracted from the graph. Demonstrated on biomaterials science, the system autonomously generates research directions that combine distant knowledge domains without human direction of the ideation process.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Problem Framing"],
     creative_thinking_types: ["Divergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory", "Combinational"]
@@ -1020,7 +1020,7 @@ export const filteredData = [
     url: "https://arxiv.org/abs/2408.06292",
     core_contributions: "The AI Scientist is an end-to-end automated research pipeline in which an LLM generates novel research ideas, implements experimental code, runs experiments, analyzes results, and writes a full scientific paper — all without human intervention during execution. The system includes an automated reviewer agent that evaluates generated papers against conference standards. Demonstrated across three machine learning subfields, it represents a paradigmatic instantiation of the AI Automation design goal, reducing the researcher's role to defining the problem scope and evaluating finished manuscripts.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Problem Framing", "Research Planning", "Analysis & Sensemaking"],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: ["Exploratory"]
@@ -1036,7 +1036,7 @@ export const filteredData = [
     url: "https://arxiv.org/abs/2501.04227",
     core_contributions: "Agent Laboratory is a fully autonomous research workflow in which specialized LLM agents (Literature Review, Experimentation, Report Writing) execute a complete research project from a problem statement to a written paper. The system introduces mle-solver, an ML engineering agent, and uses automated evaluation against human researcher baselines. Agent Laboratory substantially reduces the cost of running machine learning research experiments while maintaining paper quality, demonstrating the scalability of AI Automation for end-to-end scientific work.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Problem Framing", "Research Planning"],
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: ["Exploratory"]
@@ -1052,7 +1052,7 @@ export const filteredData = [
     url: "https://doi.org/10.1038/s43588-022-00281-6",
     core_contributions: "AutoDiscovery is an algorithm that automatically identifies fundamental variables underlying physical systems directly from experimental measurements, without domain knowledge. The system applies an information-theoretic criterion to discover minimal sets of variables that fully describe system behavior, rediscovering known physical quantities (angles, angular velocities) from video data of pendulum and double-pendulum systems. It exemplifies AI Automation applied to the problem construction stage of scientific inquiry — autonomously determining what variables matter before hypothesis generation begins.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Analysis & Sensemaking"],
     creative_thinking_types: ["Convergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory"]
@@ -1084,7 +1084,7 @@ export const filteredData = [
     url: "https://arxiv.org/abs/2404.18400",
     core_contributions: "LLM-SR uses large language models to generate candidate scientific equations as executable programs, iteratively evolving them using evolutionary search guided by LLM scientific priors and symbolic regression fitness scores. The approach substantially outperforms prior symbolic regression methods on physics benchmarks, discovering correct closed-form equations for Kepler's third law and pendulum dynamics from noisy data. It extends AI Automation to the equation-discovery layer of research, where the generative and search processes run autonomously without researcher involvement in hypothesis formation.",
     tool_types: ["Type 2"],
-    research_stages: [],
+    research_stages: ["Analysis & Sensemaking"],
     creative_thinking_types: ["Convergent"],
     wallas_stages: ["Preparation", "Illumination"],
     bodens_types: ["Exploratory"]

@@ -1,6 +1,6 @@
 # Research Ideation Tools — Interactive Literature Review
 
-An interactive dashboard for exploring the growing body of research on **AI-assisted research ideation and scientific creativity support tools (CSTs)**. Papers are categorized by tool type, research ideation stage, and underlying cognitive-creativity frameworks ([Guilford](https://en.wikipedia.org/wiki/JP_Guilford), [Wallas](https://en.wikipedia.org/wiki/Graham_Wallas), [Boden](https://en.wikipedia.org/wiki/Margaret_Boden)).
+An interactive dashboard for exploring the growing body of research on **Computational Support for Research Ideation**. Papers are organized across two primary design paradigms — **AI Automation** (emulation goal) and **Mixed-Initiative tools** (application goal) — and further categorized by research ideation stage and underlying cognitive-creativity frameworks ([Guilford](https://en.wikipedia.org/wiki/JP_Guilford), [Wallas](https://en.wikipedia.org/wiki/Graham_Wallas), [Boden](https://en.wikipedia.org/wiki/Margaret_Boden)).
 
 🔗 **Live dashboard:** [https://JialingJia.github.io/CST_tool_review/](https://JialingJia.github.io/CST_tool_review/)
 
@@ -12,7 +12,7 @@ An interactive dashboard for exploring the growing body of research on **AI-assi
 
 The dashboard has three panels:
 
-- **Paper Database** — filterable table of 57 categorized papers (updated monthly), searchable by tool type, research stage, creativity framework, and keyword.
+- **Paper Database** — filterable table of 74 categorized papers (updated monthly), searchable by tool type, research stage, creativity framework, and keyword.
 - **Literature Review** — a structured prose review of the field, updated monthly with new papers. Readers can highlight any sentence and leave a comment directly on the page.
 - **Contributors** — credits for community members and the AI pipeline that keep the review current.
 
@@ -22,11 +22,11 @@ The dashboard has three panels:
 
 ### Tool Types
 
-| Tag | Design philosophy | Core question |
+| Tag | Design paradigm | Role of researcher |
 |---|---|---|
-| **Type 1** | Scaffolding Human Cognitive Processes | The human generates ideas; the tool restructures, prompts, or extends their thinking. |
-| **Type 2** | Computational Creativity with Human as Evaluator | The system generates ideas; the human selects, filters, and adapts them. |
-| **Type 1 + Type 2** | Hybrid | Both human and system make substantive intellectual contributions — agency is distributed. |
+| **Type 1** | Mixed-Initiative (application goal) | Researcher as primary creative agent — tool provides preparatory scaffolding or generative support without taking over the generative act. |
+| **Type 2** | AI Automation (emulation goal) | System autonomously conducts literature review, hypothesis generation, and planning; researcher evaluates finished outputs. |
+| **Type 1 + Type 2** | Hybrid | Both human and system make substantive intellectual contributions — agency is distributed across the pipeline. |
 | **Survey / Theory** | Synthesis or framework paper | No tool artifact; primary contribution is a review, taxonomy, or conceptual model. |
 | **Empirical Study** | Data collection | Primary contribution is findings about human creative behavior or tool effects. |
 

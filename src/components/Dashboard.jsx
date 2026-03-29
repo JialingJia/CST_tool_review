@@ -307,23 +307,26 @@ const Dashboard = ({ activeFilters, setActiveFilters }) => {
       {/* Header */}
       <header style={{ marginBottom: '1.5rem' }}>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.025em', margin: '0 0 0.4rem 0' }}>
-          Research Ideation Tools/Systems Literature Review
+          Computational Research Ideations (Literature Review)
         </h1>
         <p style={{ color: '#64748b', fontSize: '1rem', margin: '0 0 1rem 0' }}>
           Interactive literature review for Research Ideation Tools/Systems.
         </p>
         <div style={{ background: '#f0fdf4', padding: '0.85rem 1.25rem', borderRadius: '8px', borderLeft: '4px solid #22c55e', color: '#166534', fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <strong>Welcome to the Research Ideation Tools/Systems Literature Review.</strong> This interactive literature review provides a comprehensive
-          overview of Research Ideation Tools/Systems, categorized by their core contributions, research stages, and
-          underlying cognitive frameworks (<a target='_blank' href="https://en.wikipedia.org/wiki/JP_Guilford">Guilford's</a>, <a target='_blank' href="https://en.wikipedia.org/wiki/Graham_Wallas">Wallas's</a>, and <a target='_blank' href="https://en.wikipedia.org/wiki/Margaret_Boden">Boden's</a> theories of computational creativity). Use the filter tags
-          below to explore the literature and discover connections across creative domains.
+          <strong>Welcome to the Research Ideation Tools/Systems Literature Review.</strong> This interactive literature review maps the landscape of
+          compuational research ideation across two primary paradigms: <em>AI Automation</em> — systems that autonomously conduct literature review,
+          hypothesis generation, and experimental planning — and <em>Mixed-Initiative</em> tools that keep the researcher
+          as the primary creative agent while extending their cognitive reach.
+          Papers are further categorized by research ideation stage and underlying cognitive frameworks
+          (<a target='_blank' href="https://en.wikipedia.org/wiki/JP_Guilford">Guilford's</a>, <a target='_blank' href="https://en.wikipedia.org/wiki/Graham_Wallas">Wallas's</a>, and <a target='_blank' href="https://en.wikipedia.org/wiki/Margaret_Boden">Boden's</a> theories of computational creativity).
+          Use the filter tags below to explore the literature and discover connections across creative domains.
           <br />
           <br />
           <span style={{ fontWeight: 600, fontSize: '0.82rem', display: 'block', marginBottom: '0.4rem' }}>Tool Type Legend:</span>
           <span style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center' }}>
             {[
-              { label: 'Type 1', desc: 'Scaffolding Human Cognitive Processes', bg: '#ecfdf5', text: '#065f46', border: '#6ee7b7' },
-              { label: 'Type 2', desc: 'Computational Creativity with Human as Evaluator', bg: '#eff6ff', text: '#1e40af', border: '#93c5fd' },
+              { label: 'Type 1', desc: 'Mixed-Initiative · researcher as primary creative agent (preparatory scaffolding or generative support)', bg: '#ecfdf5', text: '#065f46', border: '#6ee7b7' },
+              { label: 'Type 2', desc: 'AI Automation · system autonomously generates ideas; researcher evaluates outputs', bg: '#eff6ff', text: '#1e40af', border: '#93c5fd' },
               { label: 'Survey / Theory', desc: 'Survey, taxonomy, or conceptual/theoretical paper (no tool artifact)', bg: '#faf5ff', text: '#6b21a8', border: '#d8b4fe' },
               { label: 'Empirical Study', desc: 'User study, experiment, or field study (no tool artifact)', bg: '#fff7ed', text: '#9a3412', border: '#fdba74' },
             ].map(({ label, desc, bg, text, border }) => (

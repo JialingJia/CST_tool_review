@@ -121,11 +121,13 @@ function parseSections(raw) {
 // Section heading → tool_types filter preset
 function sectionFilterPreset(heading) {
   const h = heading.toLowerCase();
-  if (h.includes('scaffolding'))   return { tool_types: ['Type 1'] };
-  if (h.includes('computational')) return { tool_types: ['Type 2'] };
-  if (h.includes('hybrid'))        return { tool_types: ['Type 1', 'Type 2'] };
-  if (h.includes('empirical'))     return { tool_types: ['Empirical Study'] };
-  if (h.includes('theoretical'))   return { tool_types: ['Survey / Theory'] };
+  if (h.includes('ai automation'))   return { tool_types: ['Type 2'] };
+  if (h.includes('mixed-initiative')) return { tool_types: ['Type 1'] };
+  if (h.includes('scaffolding'))      return { tool_types: ['Type 1'] };
+  if (h.includes('computational'))    return { tool_types: ['Type 2'] };
+  if (h.includes('hybrid'))           return { tool_types: ['Type 1', 'Type 2'] };
+  if (h.includes('empirical'))        return { tool_types: ['Empirical Study'] };
+  if (h.includes('theoretical'))      return { tool_types: ['Survey / Theory'] };
   return null;
 }
 
