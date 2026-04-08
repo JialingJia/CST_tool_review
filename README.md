@@ -1,8 +1,8 @@
-# Research Ideation Tools — Interactive Literature Review
+# Computational Support for Research Ideation — Interactive Literature Review
 
 An interactive dashboard for exploring the growing body of research on **Computational Support for Research Ideation**. Papers are organized across two primary design paradigms — **AI Automation** (emulation goal) and **Mixed-Initiative tools** (application goal) — and further categorized by research ideation stage and underlying cognitive-creativity frameworks ([Guilford](https://en.wikipedia.org/wiki/JP_Guilford), [Wallas](https://en.wikipedia.org/wiki/Graham_Wallas), [Boden](https://en.wikipedia.org/wiki/Margaret_Boden)).
 
-🔗 **Live dashboard:** [https://JialingJia.github.io/CST_tool_review/](https://JialingJia.github.io/CST_tool_review/)
+🔗 **Live dashboard:** [https://jialingjia.github.io/Computational-Research-Ideations-AI-Lit-Review/](https://jialingjia.github.io/Computational-Research-Ideations-AI-Lit-Review/)
 
 > Dashboard UI and interactive filtering experience co-designed and developed by **Antigravity (Google DeepMind AI)**.
 
@@ -12,7 +12,7 @@ An interactive dashboard for exploring the growing body of research on **Computa
 
 The dashboard has three panels:
 
-- **Paper Database** — filterable table of 74 categorized papers (updated monthly), searchable by tool type, research stage, creativity framework, and keyword.
+- **Paper Database** — filterable table of 79 categorized papers (updated monthly), searchable by tool type, research stage, creativity framework, and keyword.
 - **Literature Review** — a structured prose review of the field, updated monthly with new papers. Readers can highlight any sentence and leave a comment directly on the page.
 - **Contributors** — credits for community members and the AI pipeline that keep the review current.
 
@@ -53,7 +53,7 @@ Papers are also tagged by the cognitive/computational creativity models they eng
 
 ### Leaving a Comment on the Live Site
 
-The easiest way to contribute. On the [live dashboard](https://JialingJia.github.io/CST_tool_review/):
+The easiest way to contribute. On the [live dashboard](https://jialingjia.github.io/Computational-Research-Ideations-AI-Lit-Review/):
 
 1. Navigate to the **Literature Review** tab.
 2. Highlight any sentence you want to comment on.

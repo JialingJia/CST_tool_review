@@ -338,7 +338,7 @@ const Dashboard = ({ activeFilters, setActiveFilters }) => {
               { label: 'Empirical Study', desc: 'User study, experiment, or field study (no tool artifact)', bg: '#fff7ed', text: '#9a3412', border: '#fdba74' },
             ].map(({ label, desc, bg, text, border }) => (
               <span key={label} style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '5px', fontSize: '0.78rem', lineHeight: '1.5' }}>
-                <span style={{ background: bg, color: text, border: `1px solid ${border}`, padding: '1px 8px', borderRadius: '10px', fontWeight: 600, whiteSpace: 'nowrap', flexShrink: 0, marginTop: '2px' }}>{label}</span>
+                <span style={{ background: bg, color: text, border: `1px solid ${border}`, padding: '1px 8px', borderRadius: '10px', fontWeight: 600, whiteSpace: 'nowrap', flexShrink: 0, marginTop: '-2px' }}>{label}</span>
                 <span style={{ color: '#4b7a5a' }}>{desc}</span>
               </span>
             ))}
@@ -468,7 +468,7 @@ const Dashboard = ({ activeFilters, setActiveFilters }) => {
           className="ag-theme-quartz"
           style={{
             height: 'clamp(500px, 80vh, 1100px)',
-            minWidth: '700px',   /* prevents columns from squishing too much */
+            minWidth: '1200px',   /* prevents columns from squishing too much */
             width: '100%',
             borderRadius: '8px',
             overflow: 'hidden',
