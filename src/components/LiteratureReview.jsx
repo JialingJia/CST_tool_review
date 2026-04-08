@@ -151,7 +151,7 @@ function CitationChip({ inner }) {
 
   // derive display text: "Smith et al. 2024" → "Smith 2024"
   const yrM = inner.match(/\d{4}/);
-  const namePart = inner.split(/\s+et al\.|\s+and\s+/)[0];
+  const namePart = inner.split(/\s+et al\.|\s+and\s+/)[0].replace(/\s*\d{4}[a-d]?$/, '').trim();
   const display = yrM ? `${namePart} ${yrM[0]}` : inner;
 
   if (!paper) {

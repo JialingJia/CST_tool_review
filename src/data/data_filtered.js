@@ -1268,6 +1268,38 @@ export const filteredData = [
     bodens_types: ["Combinational"]
   },
 
+  // ── ENTRY 80 ──────────────────────────────────────────────────────────────
+  {
+    id: "f80",
+    title: "Principles of Mixed-Initiative User Interfaces",
+    authors: ["Horvitz, E."],
+    year: 1999,
+    venue: "ACM CHI Conference on Human Factors in Computing Systems",
+    url: "https://dl.acm.org/doi/10.1145/302979.303030",
+    core_contributions: "Defines the mixed-initiative paradigm for human-computer interaction: systems that maintain shared control between human and machine, delegating to automation tasks that are tedious or computationally tractable while preserving human authority over decisions requiring contextual judgment and expertise. Introduces key design principles including the balance of initiative, attention, and uncertainty in collaborative human-AI systems.",
+    tool_types: ["Survey / Theory"],
+    research_stages: [],
+    creative_thinking_types: [],
+    wallas_stages: [],
+    bodens_types: []
+  },
+
+  // ── ENTRY 81 ──────────────────────────────────────────────────────────────
+  {
+    id: "f81",
+    title: "Design Lessons From AI’s Two Grand Goals: Human Emulation and Useful Applications",
+    authors: ["Shneiderman, B."],
+    year: 2020,
+    venue: "IEEE Transactions on Technology and Society",
+    url: "https://doi.org/10.1109/TTS.2020.2992669",
+    core_contributions: "Articulates two historically competing design goals in AI — the emulation goal (building autonomous systems that replicate human intelligence) and the application goal (building tools that amplify human capabilities without replacing them) — and argues for a human-centered AI paradigm that prioritizes the application goal. Proposes a framework of reliable, safe, and trustworthy AI that keeps humans in supervisory control while leveraging machine intelligence.",
+    tool_types: ["Survey / Theory"],
+    research_stages: [],
+    creative_thinking_types: [],
+    wallas_stages: [],
+    bodens_types: []
+  },
+
   // ── ENTRY 79 ──────────────────────────────────────────────────────────────
   {
     id: "f79",

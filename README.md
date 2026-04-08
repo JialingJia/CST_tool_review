@@ -12,8 +12,8 @@ An interactive dashboard for exploring the growing body of research on **Computa
 
 The dashboard has three panels:
 
-- **Paper Database** — filterable table of 79 categorized papers (updated monthly), searchable by tool type, research stage, creativity framework, and keyword.
-- **Literature Review** — a structured prose review of the field, updated monthly with new papers. Readers can highlight any sentence and leave a comment directly on the page.
+- **Paper Database** — filterable table of 81 categorized papers (updated monthly), searchable by tool type, research stage, creativity framework, and keyword.
+- **Literature Review** — a structured prose review of the field, updated monthly with new papers. Citations in the prose render as interactive chips: hover any **Author Year** tag to see the paper's title, authors, venue, and type. Readers can also highlight any sentence and leave a comment directly on the page.
 - **Contributors** — credits for community members and the AI pipeline that keep the review current.
 
 ---
@@ -124,12 +124,15 @@ CST_tool_review/
 │   │   └── contributors.js        # Structured mirror of acknowledgements for UI
 │   └── firebase.js                # Firestore config (highlight layer)
 ├── collect_comments.py            # Fetches pending comments from Firestore
+├── init_processed_flag.py         # One-time script: marks existing Firestore docs as processed
 ├── pending_instructions.json      # Comments awaiting pipeline action
 ├── contributor_credits.json       # Contributor metadata for credit generation
 └── firebase-service-account.json  # Service account key (not committed)
 ```
 
 > **★ Key rule**: `data_filtered.js` is the source of truth for what's in the corpus. A paper being cited in the prose of `literature_review.md` does **not** mean it's in the database — always check the data file directly.
+>
+> **★ Citation rendering**: A small number of entries in `data_filtered.js` are foundational theoretical references (e.g. Horvitz 1999, Shneiderman 2020) that are **not research tools** and will not appear in the Paper Grid's tag filters. They are included solely to power the interactive citation chips in the Literature Review prose. These entries have empty `research_stages`, `wallas_stages`, and `bodens_types` arrays and carry only the `Survey / Theory` type tag.
 
 ---
 
@@ -143,6 +146,21 @@ npm run deploy    # build + push to gh-pages branch
 ```
 
 Requires Node 18+. The highlight/comment layer requires a Firebase project and a valid `firebase-service-account.json` for the collector script.
+
+---
+
+## License
+
+This project uses two licenses, one for code and one for content:
+
+| What | License |
+|---|---|
+| App source code (`src/components/`, `src/App.jsx`, `src/context/`, `src/main.jsx`, scripts) | [MIT](LICENSE) |
+| Review content (`src/data/literature_review.md`, `src/data/data_filtered.js`, `src/data/acknowledgements.md`) | [CC BY 4.0](LICENSE-CC-BY-4.0) |
+
+If you use or adapt the review content, please cite it as:
+
+> Liu, H. (2026). *Computational Support for Research Ideation: An Interactive Literature Review*. https://jialingjia.github.io/Computational-Research-Ideations-AI-Lit-Review/
 
 ---
 
