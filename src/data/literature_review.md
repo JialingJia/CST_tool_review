@@ -228,8 +228,15 @@ of six diverse LLMs generates a pool of candidate research questions from synthe
 filtered via cross-model voting to maximize breadth; human experts then progressively take on
 greater oversight across three selection stages, with AI contribution most useful for identifying
 established breakthroughs and human judgment becoming essential for forward-looking questions
-where model outputs diverge sharply from expert assessment. The analogical search engine
-of Kang et al. [2022] takes a structurally similar approach in the information foraging stage,
+where model outputs diverge sharply from expert assessment. Chen and Zhang [2026] pursue
+combinatorial innovation through a complementary architecture: a multi-agent iterative
+planning-search strategy that cycles through generation, evaluation, and refinement across
+specialized agents, each drawing on iterative knowledge retrieval to diversify the conceptual
+inputs to recombination. Experiments in the NLP domain demonstrate improvements over prior
+baselines in both diversity and novelty, reinforcing the finding that multi-agent diversity is a
+reliable lever for expanding the combinational reach of LLM-based ideation. The analogical search
+engine of Kang et al. [2022] takes a structurally similar approach in the information foraging
+stage,
 retrieving solutions from distant scientific domains that are structurally analogous to the
 user's problem — letting the system generate the cross-domain connections while the researcher
 decides what to transfer. Spinneret [Bae et al. 2020] surfaces non-obvious concept associations
@@ -256,11 +263,16 @@ through a research field's trajectory, generating ideas at the frontier of that 
 the developmental logic of the field rather than treating literature as a flat knowledge base.
 Deep Ideation [Zhao et al. 2024] integrates LLM agents with a scientific concept network built
 from keyword co-occurrence across a large paper corpus, generating ideas through an
-explore-expand-evolve workflow reinforced by a critic trained on real reviewer feedback. The
-minimum Bayes risk decoding approach of Jinnai et al. [2024] addresses a methodological problem
-common to all of these systems: the tendency of LLMs toward repetitive, low-diversity generation.
-By optimizing simultaneously for quality and diversity in the decoding process, it enables
-ideation systems to produce varied idea sets rather than converging on a single direction.
+explore-expand-evolve workflow reinforced by a critic trained on real reviewer feedback. Sanyal
+et al.'s Spark system [2025] takes the evaluation component a step further: rather than training
+a critic on researcher feedback alone, it trains a dedicated reviewer model (Judge) on 600K
+scientific peer reviews from OpenReview, coupling retrieval-augmented idea generation with this
+learned evaluator to produce a self-contained generation-and-assessment pipeline grounded
+explicitly in Boden's computational creativity framework. The minimum Bayes risk decoding approach
+of Jinnai et al. [2024] addresses a methodological problem common to all of these systems: the
+tendency of LLMs toward repetitive, low-diversity generation. By optimizing simultaneously for
+quality and diversity in the decoding process, it enables ideation systems to produce varied idea
+sets rather than converging on a single direction.
 
 Two systems in this cluster target the problem framing stage from a specialized angle. The
 automated error discovery work of Petrak et al. [2025] applies systematic computational
@@ -283,8 +295,15 @@ research pipeline from problem identification through experimental execution and
 The AI Scientist [Lu et al. 2024] provides the canonical example of this design: an end-to-end
 pipeline in which an LLM generates research ideas, implements experimental code, runs experiments,
 analyzes results, and produces a complete scientific paper without human intervention. An
-automated reviewer agent evaluates the generated papers against conference standards. Agent
-Laboratory [Schmidgall et al. 2025] pursues similar scope with an architecture organized around
+automated reviewer agent evaluates the generated papers against conference standards. The AI
+Scientist-v2 [Lu et al. 2025] extends this architecture through progressive agentic tree search,
+eliminating the reliance on human-authored code templates that constrained the original system
+and generalizing across diverse ML research domains. Its central advance is a tree-structured
+exploration of experimental branches managed by a dedicated experiment-manager agent, enabling
+the system to backtrack from unproductive directions rather than committing to a single sequential
+pipeline. Notably, an AI-generated manuscript produced by the system passed peer review at a
+recognized ML workshop — marking the first reported instance of fully AI-authored work clearing
+a formal review process. Agent Laboratory [Schmidgall et al. 2025] pursues similar scope with an architecture organized around
 distinct Literature Review, Experimentation, and Report Writing agents, demonstrating that
 parallelizing the research pipeline across specialized agents substantially reduces the cost of
 running machine learning experiments while maintaining paper quality. SciAgents [Buehler 2024]
@@ -375,6 +394,20 @@ the sensemaking work that converts a large paper set into usable knowledge. Thes
 a common design logic: rather than asking the researcher to specify what they want through queries,
 they infer relevant interests from the researcher's existing intellectual identity and past reading
 behavior.
+
+A structurally distinct mode of preparatory information foraging — comprehensive rather than
+interest-driven — is the systematic literature review (SLR), which demands exhaustive multi-database
+search rather than personally curated discovery. Ye et al. [2026] address this through ARC, a
+human-in-the-loop design probe that targets three friction points practitioners consistently
+encounter in SLR construction: the high cognitive load of managing iterative query refinement
+across heterogeneous databases, the scale of modern publication output, and the tension between
+automation and scholarly agency. ARC provides a unified search interface with transparent side-by-
+side comparison of iterative queries, integrated reference searching, and a verifiable AI-assisted
+screening module that keeps human judgment central at each filtering step — making the AI's
+reasoning visible rather than opaque. An exploratory study with 20 experienced researchers and a
+comparative study with 8 researchers validated the design, finding that supporting strategic
+rather than mechanical search behavior substantially reduced cognitive friction without surrendering
+researcher control over inclusion decisions.
 
 The sensemaking dimension of preparation — making sense of what has been found, not just finding
 it — is addressed most directly by tools that scaffold the organization and interpretation of

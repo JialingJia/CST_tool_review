@@ -49,6 +49,15 @@ export const contributors = [
           "Added *Exploring the role of LLMs in the scientific method* (Zhang et al. 2025) → §Theoretical Grounding",
         ],
       },
+      {
+        month: "May 2026",
+        items: [
+          "Added *Spark: A System for Scientifically Creative Idea Generation* (Sanyal et al. 2025) → §LLM-Based Hypothesis Generation",
+          "Added *The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search* (Lu et al. 2025) → §Full-Pipeline Autonomous Research Agents",
+          "Added *From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic Literature Reviews* (Ye et al. 2026) → §Preparatory Scaffolding",
+          "Added *Enhancing Research Idea Generation through Combinatorial Innovation and Multi-Agent Iterative Search Strategies* (Chen & Zhang 2026) → §LLM-Based Hypothesis Generation",
+        ],
+      },
     ],
   },
 

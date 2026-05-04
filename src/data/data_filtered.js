@@ -1314,6 +1314,70 @@ export const filteredData = [
     creative_thinking_types: ["Divergent", "Convergent"],
     wallas_stages: ["Preparation", "Illumination", "Verification"],
     bodens_types: []
+  },
+
+  // ── ENTRY 82 ──────────────────────────────────────────────────────────────
+  {
+    id: "f82",
+    title: "Spark: A System for Scientifically Creative Idea Generation",
+    authors: ["Sanyal, A.", "Schapiro, S.", "Shashidhar, S.", "Moon, R.", "Varshney, L.R.", "Hakkani-Tur, D."],
+    year: 2025,
+    venue: "Proceedings of the 16th International Conference on Computational Creativity (ICCC)",
+    url: "http://arxiv.org/abs/2504.20090",
+    core_contributions: "Spark is a scientific idea generation system that couples retrieval-augmented LLM generation with a learned reviewer model (Judge, trained on 600K scientific reviews from OpenReview) to produce and self-evaluate novel research ideas grounded in prior literature. The system integrates literature retrieval, idea synthesis, refinement, and peer-review simulation into a unified workflow; Judge's annotated training data is released publicly. The work grounds idea generation explicitly in Boden's computational creativity framework and is intended to inspire further CC-focused research on scientific ideation.",
+    tool_types: ["Type 2"],
+    research_stages: ["Problem Framing"],
+    creative_thinking_types: ["Divergent"],
+    wallas_stages: ["Illumination", "Verification"],
+    bodens_types: ["Exploratory"]
+  },
+
+  // ── ENTRY 83 ──────────────────────────────────────────────────────────────
+  {
+    id: "f83",
+    title: "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+    authors: ["Lu, C.", "et al."],
+    year: 2025,
+    venue: "arXiv [cs.AI]",
+    url: "http://arxiv.org/abs/2504.08066",
+    core_contributions: "The AI Scientist-v2 extends The AI Scientist to a fully autonomous end-to-end scientific discovery pipeline using progressive agentic tree search, eliminating reliance on human-authored code templates and generalizing across diverse ML domains. The system iteratively formulates hypotheses, designs and executes ML experiments, analyzes and visualizes results, and autonomously authors complete scientific manuscripts; an AI-generated paper successfully passed peer review at a recognized ML workshop, marking a milestone for fully autonomous AI science.",
+    tool_types: ["Type 2"],
+    research_stages: ["Problem Framing", "Research Planning", "Analysis & Sensemaking"],
+    creative_thinking_types: ["Divergent", "Convergent"],
+    wallas_stages: ["Preparation", "Illumination", "Verification"],
+    bodens_types: ["Exploratory"]
+  },
+
+  // ── ENTRY 84 ──────────────────────────────────────────────────────────────
+  {
+    id: "f84",
+    title: "From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic Literature Reviews",
+    authors: ["Ye, R.", "Sibia, N.", "Zavaleta Bernuy, A.", "Zhu, T.", "Nobre, C.", "Pammer-Schindler, V.", "Liut, M."],
+    year: 2026,
+    venue: "Proceedings of the 31st International Conference on Intelligent User Interfaces (IUI)",
+    url: "https://doi.org/10.1145/3742413.3789079",
+    core_contributions: "ARC is a human-in-the-loop design probe for systematic literature reviews (SLRs) that addresses key friction points including high cognitive load from iterative multi-database query refinement, the overwhelming scale of modern publication, and the tension between automation and scholarly agency. ARC features a unified search interface, transparent iterative search comparison for strategic refinement, integrated reference searching, and a verifiable AI-assisted screening module that keeps human judgment central. Validated through an exploratory design study with 20 researchers and a comparative user study with 8 researchers.",
+    tool_types: ["Type 1"],
+    research_stages: ["Information Foraging", "Analysis & Sensemaking"],
+    creative_thinking_types: ["Convergent"],
+    wallas_stages: ["Preparation"],
+    bodens_types: []
+  },
+
+  // ── ENTRY 85 ──────────────────────────────────────────────────────────────
+  {
+    id: "f85",
+    title: "Enhancing Research Idea Generation through Combinatorial Innovation and Multi-Agent Iterative Search Strategies",
+    authors: ["Chen, S.", "Zhang, C."],
+    year: 2026,
+    venue: "arXiv [cs.AI]",
+    url: "http://arxiv.org/abs/2604.20548",
+    core_contributions: "Proposes a multi-agent iterative planning-search strategy for research idea generation, inspired by combinatorial innovation theory, that combines LLM-based multi-agent collaboration with iterative knowledge retrieval to generate, evaluate, and refine diverse and novel research ideas through repeated interaction. Experiments in the NLP domain demonstrate improvements over state-of-the-art baselines in both diversity and novelty of generated ideas.",
+    tool_types: ["Type 2"],
+    research_stages: ["Problem Framing"],
+    creative_thinking_types: ["Divergent"],
+    wallas_stages: ["Illumination"],
+    bodens_types: ["Combinational"]
   }
 
 ];

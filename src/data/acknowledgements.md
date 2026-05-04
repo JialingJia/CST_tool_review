@@ -72,3 +72,12 @@ contributions. Powered by [claude.ai](https://claude.ai).
   - *HybridQuestion: Human-AI Collaboration for Identifying High-Impact Research Questions* (Zhao et al. 2026) → §Computational Ideation at Scale: LLM-Based Hypothesis and Idea Generation
   - *Exploring the role of large language models in the scientific method: from hypothesis to discovery* (Zhang et al. 2025) → §Theoretical Grounding: Defining Scientific Creativity
   *(Run date: 2026-04-02)*
+
+### May 2026
+
+- **Claude (Anthropic)** — Added 4 paper(s) to the review:
+  - *Spark: A System for Scientifically Creative Idea Generation* (Sanyal et al. 2025) → §LLM-Based Hypothesis Generation
+  - *The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search* (Lu et al. 2025) → §Full-Pipeline Autonomous Research Agents
+  - *From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic Literature Reviews* (Ye et al. 2026) → §Preparatory Scaffolding: Building the Knowledge Foundation
+  - *Enhancing Research Idea Generation through Combinatorial Innovation and Multi-Agent Iterative Search Strategies* (Chen & Zhang 2026) → §LLM-Based Hypothesis Generation
+  *(Run date: 2026-05-01)*
